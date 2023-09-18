@@ -1,0 +1,17 @@
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.csproj.AssemblyReference.cache
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.AssemblyInfoInputs.cache
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.AssemblyInfo.cs
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.csproj.CoreCompileInputs.cache
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\bin\Debug\HighSpeedVideoGaming.deps.json
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\bin\Debug\HighSpeedVideoGaming.runtimeconfig.json
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\bin\Debug\HighSpeedVideoGaming.dll
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\bin\Debug\HighSpeedVideoGaming.pdb
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.csproj.CopyComplete
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.dll
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\refint\HighSpeedVideoGaming.dll
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.pdb
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\HighSpeedVideoGaming.genruntimeconfig.cache
+C:\Users\orang\OneDrive\Documents\HighSpeedVideoGaming\.godot\mono\temp\obj\Debug\ref\HighSpeedVideoGaming.dll

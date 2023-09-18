@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://hgf6h6jsgdy4"]
+
+[ext_resource type="Script" path="res://Player/PlayerControl.gd" id="1_qq07l"]
+[ext_resource type="PackedScene" uid="uid://bmi63foipxt2m" path="res://Player/fashionHands.glb" id="2_82xoe"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hom76"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_qq07l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_hom76")
+
+[node name="fashionHands" parent="." instance=ExtResource("2_82xoe")]
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85831, 0.0363011)
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="MovementStateMachine" type="Node" parent="."]
+
+[node name="RunState" type="Node" parent="MovementStateMachine"]
+
+[node name="WallRunState" type="Node" parent="MovementStateMachine"]
+
+[node name="AirState" type="Node" parent="MovementStateMachine"]
+
+[node name="SlideState" type="Node" parent="MovementStateMachine"]
+
+[node name="GrindState" type="Node" parent="MovementStateMachine"]

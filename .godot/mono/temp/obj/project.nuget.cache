@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "aWkSGp0F2O8y3Hdx8H6yf/UhhMeSnuK1fQ+5sHW9WYQBRnT1Q7NexVdQlIcVWptLU73pWsNetClYR9chIi9oYA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\orang\\OneDrive\\Documents\\HighSpeedVideoGaming\\HighSpeedVideoGaming.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\orang\\.nuget\\packages\\godot.sourcegenerators\\4.1.1\\godot.sourcegenerators.4.1.1.nupkg.sha512",
+    "C:\\Users\\orang\\.nuget\\packages\\godotsharp\\4.1.1\\godotsharp.4.1.1.nupkg.sha512",
+    "C:\\Users\\orang\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512",
+    "C:\\Users\\orang\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.22\\microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\orang\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.22\\microsoft.windowsdesktop.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\orang\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.22\\microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

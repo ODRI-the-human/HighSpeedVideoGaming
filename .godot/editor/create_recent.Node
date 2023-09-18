@@ -1,0 +1,10 @@
+OmniLight3D
+Node
+TextEdit
+Node3D
+Camera3D
+Marker3D
+CollisionShape3D
+CharacterBody3D
+MeshInstance3D
+StaticBody3D
