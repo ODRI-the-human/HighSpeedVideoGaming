@@ -26,6 +26,9 @@ func Update(delta):
 	if playerObj.is_on_floor():
 		Transitioned.emit(self, "RunState")
 	
+	if playerObj.is_on_wall():
+		Transitioned.emit(self, "WallRunState")
+	
 	if Input.is_action_just_pressed("slide"):
 		Transitioned.emit(self, "AirDiveState")
 	

@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://67ohb34e4mil"]
+
+[ext_resource type="PackedScene" uid="uid://hgf6h6jsgdy4" path="res://Player/Player.tscn" id="2_qqsrx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jlkfp"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_hyenu"]
+sky_material = SubResource("ProceduralSkyMaterial_jlkfp")
+
+[sub_resource type="Environment" id="Environment_4e25i"]
+background_mode = 2
+sky = SubResource("Sky_hyenu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_njyh4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r8spl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqifr"]
+albedo_color = Color(0, 1, 1, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.05
+rim_tint = 1.0
+heightmap_scale = 1.351
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pd1pt"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_color = Color(1, 0.309804, 0.709804, 1)
+metallic = 1.0
+metallic_specular = 1.0
+emission = Color(0.72549, 0.364706, 0.976471, 1)
+anisotropy_enabled = true
+anisotropy = 1.0
+refraction_scale = -1.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_yy7fk"]
+left_to_right = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0eq1h"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4e25i")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(250, 0, 0, 0, 1, 0, 0, 0, 250, 0, -1, 0)
+shape = SubResource("BoxShape3D_njyh4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(250, 0, 0, 0, 1, 0, 0, 0, 250, 0, -1, 0)
+mesh = SubResource("BoxMesh_r8spl")
+surface_material_override/0 = SubResource("StandardMaterial3D_lqifr")
+
+[node name="Floor3" type="StaticBody3D" parent="."]
+transform = Transform3D(27.02, 0, 0, 0, 27.02, 0, 0, 0, 27.02, -41, 13, 133.963)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3"]
+shape = SubResource("BoxShape3D_njyh4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor3"]
+mesh = SubResource("BoxMesh_r8spl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pd1pt")
+
+[node name="Floor2" type="StaticBody3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 7, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_yy7fk")
+surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Floor2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(-0.5, 0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Player" parent="." instance=ExtResource("2_qqsrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -26.7879)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)

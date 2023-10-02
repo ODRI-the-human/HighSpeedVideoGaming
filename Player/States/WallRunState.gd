@@ -2,38 +2,41 @@ extends State
 class_name WallRunState
 
 var speed = 20
-var slideTimer = 1
+var normalVec : Vector3
 var dirMoving : Vector3
 
 func Enter():
 	print("Entered wall run state")
-	dirMoving = playerObj.velocity
+	
+	normalVec = playerObj.get_wall_normal()
+	var rotAxisVec = Vector3(-normalVec.z, 0, normalVec.x).normalized()
+	if rotAxisVec.angle_to(playerObj.velocity) > deg_to_rad(90): # for getting correct angle.
+		rotAxisVec = -rotAxisVec
+	
+	print("rotAxisVec: ", rotAxisVec)
+	playerObj.gravityActive = false
+	
+	dirMoving = rotAxisVec * playerObj.velocity.length()
 	speed = dirMoving.length()
 	dirMoving.y = 0
 	dirMoving = dirMoving.normalized() * speed
-	slideTimer = 1
 
 func Update(delta):
-	slideTimer += delta
 	
-	var controlDir = playerObj.input_dir.x
-	var vel = dirMoving.rotated(Vector3(0, 1, 0), -0.3 * controlDir)
+	var vel = dirMoving
 	
 	playerObj.velocity.x = vel.x
+	playerObj.velocity.y = 0
 	playerObj.velocity.z = vel.z
 	
 	if Input.is_action_just_pressed("jump"):
-		playerObj.velocity.y = clamp(playerObj.jumpVel * slideTimer, 0, 45)
-		print("lol you tried to jump out of a slide, slideTimer: ", slideTimer, " / vertical vel: ", playerObj.velocity.y)
+		playerObj.velocity.y = playerObj.jumpVel
+		playerObj.velocity += 5 * normalVec
 		Transitioned.emit(self, "AirState")
+		playerObj.gravityActive = true
 	
-	if Input.is_action_just_released("slide"):
-		var newVec = -camera.get_global_transform().basis.z
-		newVec.y = 0
-		playerObj.velocity = newVec * playerObj.velocity.length()
-		Transitioned.emit(self, "RunState")
-	
-	if !playerObj.is_on_floor():
+	if !playerObj.is_on_wall():
 		Transitioned.emit(self, "AirState")
+		playerObj.gravityActive = true
 	
 	playerObj.move_and_slide()

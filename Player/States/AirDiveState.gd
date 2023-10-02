@@ -8,7 +8,7 @@ var timer = 0
 func Enter():
 	print("Entered air dive state")
 	dirToFly = -playerObj.velocity.length() * camera.get_global_transform().basis.z
-	dirToFly.y = -40
+	dirToFly.y = -1.5 * playerObj.velocity.length()
 
 func Update(delta):
 	playerObj.velocity = dirToFly

@@ -28,6 +28,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85831, 0.0363011)
 [node name="fashionHands" parent="Neck/Camera3D" instance=ExtResource("2_82xoe")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.768, -0.036)
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Neck/Camera3D"]
+offset_right = 638.0
+offset_bottom = 92.0
+text = "hey buckaroo you are going this fast:"
+
 [node name="MovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_giv07")
 initial_state = NodePath("RunState")

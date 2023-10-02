@@ -19,6 +19,7 @@ func Update(delta):
 	currVel.y = 0
 	var newVel : Vector3
 	
+	
 	if dirToMove.length() != 0:
 		newVel = currVel + dirToMove * delta * accelSpeed
 		if newVel.length() > maxSpeed:
@@ -32,9 +33,11 @@ func Update(delta):
 		newVel = Vector3.ZERO
 		maxSpeed = 20 #Resets max speed if the player stops when on the floor.
 	
+	maxSpeed = clamp(maxSpeed, 20, 999999)
+	
 	playerObj.velocity = newVel
 	
-	if Input.is_action_pressed("slide") && playerObj.velocity.length() > 0.01:
+	if Input.is_action_pressed("slide"):
 		Transitioned.emit(self, "SlideState")
 	
 	if Input.is_action_just_pressed("jump"):
@@ -42,6 +45,7 @@ func Update(delta):
 		Transitioned.emit(self, "AirState")
 	
 	if !playerObj.is_on_floor():
+		playerObj.velocity = playerObj.lastRealVelocity
 		Transitioned.emit(self, "AirState")
 	
 	playerObj.move_and_slide()
