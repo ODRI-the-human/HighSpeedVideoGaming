@@ -1,7 +1,8 @@
 res://Levels/TestLevel.tscn
-res://Player/States/WallRunState.gd
-res://Player/States/AirState.gd
 res://Player/Player.tscn
-res://Player/PlayerControl.gd
-res://Player/States/SlideState.gd
+res://Player/States/State.gd
 res://Player/States/RunState.gd
+res://Player/PlayerControl.gd
+res://Player/States/AirState.gd
+res://Player/PlayerStateMachine.gd
+res://Player/States/SlideState.gd

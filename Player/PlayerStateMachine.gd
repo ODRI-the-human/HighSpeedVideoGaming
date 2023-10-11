@@ -1,6 +1,7 @@
 extends Node
 
 @export var initial_state : State
+@onready var playerObj = $".."
 
 var current_state : State
 var states : Dictionary = {}
@@ -18,6 +19,9 @@ func _ready():
 func _process(delta):
 	if current_state:
 		current_state.Update(delta)
+		if playerObj.updateSpeed:
+			playerObj.lastRealVelocity = playerObj.get_real_velocity()
+			playerObj.lastVelocity = playerObj.velocity
 
 #func _physics_process(delta):
 	#if current_state:

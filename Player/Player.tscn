@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://hgf6h6jsgdy4"]
+[gd_scene load_steps=13 format=3 uid="uid://hgf6h6jsgdy4"]
 
 [ext_resource type="Script" path="res://Player/PlayerControl.gd" id="1_qq07l"]
 [ext_resource type="PackedScene" uid="uid://bmi63foipxt2m" path="res://Player/fashionHands.glb" id="2_82xoe"]
@@ -10,15 +10,17 @@
 [ext_resource type="Script" path="res://Player/States/SlideState.gd" id="6_pe2cu"]
 [ext_resource type="Script" path="res://Player/States/GroundSlamState.gd" id="6_wb8ly"]
 [ext_resource type="Script" path="res://Player/States/AirDiveState.gd" id="8_gfgof"]
+[ext_resource type="Script" path="res://Player/WallClimbState.gd" id="11_jenls"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hom76"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_140nd"]
+size = Vector3(0.7, 1.8, 0.7)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_qq07l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_hom76")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_140nd")
 
 [node name="Neck" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85831, 0.0363011)
@@ -30,7 +32,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Neck/Camera3D"]
 offset_right = 638.0
-offset_bottom = 92.0
+offset_bottom = 348.0
 text = "hey buckaroo you are going this fast:"
 
 [node name="MovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -58,4 +60,5 @@ script = ExtResource("8_gfgof")
 [node name="SlideState" type="Node" parent="MovementStateMachine"]
 script = ExtResource("6_pe2cu")
 
-[node name="GrindState" type="Node" parent="MovementStateMachine"]
+[node name="WallClimbState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("11_jenls")

@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-@export var moveSpeed = 5.0
 @export var jumpVel = 4.5
 @export var sensitivity = 0.01
 
@@ -8,8 +7,13 @@ var time = 0
 var direction : Vector3
 var mouseIsHidden = true
 var input_dir : Vector2
-var lastRealVelocity : Vector3
 var gravityActive = true
+var speedState = 0 # 0 for normal speed. When moving at over 30 speed, goes to 1, at over 60 it goes to 2. Needed for some abilities n such
+var lastVelocity : Vector3
+var lastRealVelocity : Vector3
+var updateSpeed = true
+
+var canAirPunch = true
 
 @onready var neck = $Neck;
 @onready var camera = $Neck/Camera3D
@@ -21,7 +25,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	floor_max_angle = deg_to_rad(89)
+	floor_max_angle = deg_to_rad(85)
 	floor_snap_length = 2
 
 func _unhandled_input(event):
@@ -31,7 +35,8 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _process(delta):
-	textLabel.text = "hey buckaroo you are moving this fast: " + str(velocity.length()) + "\nand current state: " + str(stateMachine.current_state)
+	textLabel.text = "hey buckaroo 'last' velocity: " + str(lastVelocity.length()) + "\nlast velocity components:\n" + str(lastVelocity.x) + "\n" + str(lastVelocity.y) + "\n" + str(lastVelocity.z) + "\nlast real velocity: " + str(lastRealVelocity.length()) + "\nlast real velocity components:\n" + str(lastRealVelocity.x) + "\n" + str(lastRealVelocity.y) + "\n" + str(lastRealVelocity.z) + "\nand current state: " + str(stateMachine.current_state)
+	speedState = clamp(floor(lastVelocity.length()/45), 0, 2)
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if mouseIsHidden:
@@ -58,7 +63,5 @@ func _physics_process(delta):
 	
 	#print("velocity n shit: ", velocity.length())
 	
-	if is_on_floor():
-		lastRealVelocity = get_real_velocity()
 	input_dir = Input.get_vector("moveLeft", "moveRight", "moveForward", "moveBack")
 	direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

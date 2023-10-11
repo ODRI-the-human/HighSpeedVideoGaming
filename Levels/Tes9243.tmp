@@ -111,6 +111,18 @@ shape = SubResource("BoxShape3D_njyh4")
 mesh = SubResource("BoxMesh_r8spl")
 surface_material_override/0 = SubResource("StandardMaterial3D_pd1pt")
 
+[node name="Floor12" type="StaticBody3D" parent="."]
+transform = Transform3D(-15, 0, -2.26494e-06, 0, 15, 0, 2.26494e-06, 0, -15, -0.0812998, 15, 65)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor12"]
+transform = Transform3D(-8.74228e-08, 0, -1, 0, 2, 0, 2, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_yy7fk")
+surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Floor12"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(-1, 1, 1, -1, -1, -1)
+
 [node name="Floor14" type="StaticBody3D" parent="."]
 transform = Transform3D(15, 0, 3.57628e-06, 0, 15, 0, -3.57628e-06, 0, 15, -0.0812998, 15, -16)
 
@@ -120,30 +132,6 @@ mesh = SubResource("PrismMesh_yy7fk")
 surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Floor14"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-polygon = PackedVector2Array(-2, 2, 2, -2, -2, -2)
-
-[node name="Floor16" type="StaticBody3D" parent="."]
-transform = Transform3D(-15, 0, -4.88762e-06, 0, 15, 0, 4.88762e-06, 0, -15, -0.0812998, 3, 79)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor16"]
-transform = Transform3D(-1.74845e-07, 0, -1, 0, 4, 0, 4, 0, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("PrismMesh_yy7fk")
-surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
-
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Floor16"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-polygon = PackedVector2Array(-2, 2, 2, -2, -2, -2)
-
-[node name="Floor17" type="StaticBody3D" parent="."]
-transform = Transform3D(-15, 0, -4.88762e-06, 0, 15, 0, 4.88762e-06, 0, -15, 14.9187, -9, 79)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor17"]
-transform = Transform3D(-1.74845e-07, 0, -1, 0, 4, 0, 4, 0, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("PrismMesh_yy7fk")
-surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
-
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Floor17"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 polygon = PackedVector2Array(-2, 2, 2, -2, -2, -2)
 
@@ -158,6 +146,18 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Floor15"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 polygon = PackedVector2Array(-2, 2, 2, -2, -2, -2)
+
+[node name="Floor13" type="StaticBody3D" parent="."]
+transform = Transform3D(-15, 0, -2.26494e-06, 0, 15, 0, 2.26494e-06, 0, -15, 14.9187, 15, 65)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor13"]
+transform = Transform3D(-8.74228e-08, 0, -1, 0, 2, 0, 2, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_yy7fk")
+surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Floor13"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(-1, 1, 1, -1, -1, -1)
 
 [node name="Player" parent="." instance=ExtResource("2_qqsrx")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4, 0, -38.7879)
