@@ -26,7 +26,7 @@ func Enter():
 
 func Update(delta):
 	playerObj.updateSpeed = true
-	playerObj.position -= 0.2 * normalVec
+	playerObj.velocity -= 0.2 * normalVec
 	playerObj.move_and_slide()
 	
 	if !playerObj.is_on_wall():

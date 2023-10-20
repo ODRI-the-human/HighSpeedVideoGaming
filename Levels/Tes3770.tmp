@@ -1,7 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://67ohb34e4mil"]
+[gd_scene load_steps=11 format=3 uid="uid://67ohb34e4mil"]
 
-[ext_resource type="PackedScene" uid="uid://bertisb6vtdpb" path="res://LevelBits/Platform.tscn" id="1_wqham"]
-[ext_resource type="PackedScene" uid="uid://b0julw7h77xrj" path="res://LevelBits/Ramp4x4.tscn" id="2_bm0wt"]
 [ext_resource type="PackedScene" uid="uid://hgf6h6jsgdy4" path="res://Player/Player.tscn" id="2_qqsrx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jlkfp"]
@@ -63,7 +61,15 @@ transform = Transform3D(250, 0, 0, 0, 1, 0, 0, 0, 250, 0, -1, 0)
 mesh = SubResource("BoxMesh_r8spl")
 surface_material_override/0 = SubResource("StandardMaterial3D_lqifr")
 
-[node name="Floor3" parent="." instance=ExtResource("1_wqham")]
+[node name="Floor3" type="StaticBody3D" parent="."]
+transform = Transform3D(-3.8147e-06, 0, -20, 0, 30, 0, 60, 0, 1.90735e-06, -124.607, 15, 89.8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3"]
+shape = SubResource("BoxShape3D_njyh4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor3"]
+mesh = SubResource("BoxMesh_r8spl")
+surface_material_override/0 = SubResource("StandardMaterial3D_pd1pt")
 
 [node name="Floor4" type="StaticBody3D" parent="."]
 transform = Transform3D(42.4264, 0, -14.1421, 0, 30, 0, 42.4264, 0, 14.1421, -103.393, 15, 142.126)
@@ -82,17 +88,6 @@ transform = Transform3D(60, 0, 0, 0, 30, 0, 0, 0, 20, -56.3934, 15, 165.126)
 shape = SubResource("BoxShape3D_njyh4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor8"]
-mesh = SubResource("BoxMesh_r8spl")
-surface_material_override/0 = SubResource("StandardMaterial3D_pd1pt")
-
-[node name="Floor9" type="StaticBody3D" parent="."]
-transform = Transform3D(-2.62268e-06, 0, 15, 0, 20, 0, -60, 0, -6.55671e-07, 0, 11, 24.126)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor9"]
-transform = Transform3D(1, 0, 8.88178e-16, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_njyh4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor9"]
 mesh = SubResource("BoxMesh_r8spl")
 surface_material_override/0 = SubResource("StandardMaterial3D_pd1pt")
 
@@ -176,7 +171,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 polygon = PackedVector2Array(-2, 2, 2, -2, -2, -2)
 
-[node name="Floor15" parent="." instance=ExtResource("2_bm0wt")]
+[node name="Floor15" type="StaticBody3D" parent="."]
+transform = Transform3D(15, 0, 3.57628e-06, 0, 15, 0, -3.57628e-06, 0, 15, 14.9187, 3, -16)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor15"]
+transform = Transform3D(-1.74845e-07, 0, -1, 0, 4, 0, 4, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_yy7fk")
+surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Floor15"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(-2, 2, 2, -2, -2, -2)
 
 [node name="Player" parent="." instance=ExtResource("2_qqsrx")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4, 0, -38.7879)

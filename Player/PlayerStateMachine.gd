@@ -22,6 +22,7 @@ func _process(delta):
 		if playerObj.updateSpeed:
 			playerObj.lastRealVelocity = playerObj.get_real_velocity()
 			playerObj.lastVelocity = playerObj.velocity
+		playerObj.lastFloorNormal = playerObj.get_floor_normal()
 
 #func _physics_process(delta):
 	#if current_state:

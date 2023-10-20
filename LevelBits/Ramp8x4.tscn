@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckmdgmbjvviax"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_yy7fk"]
+left_to_right = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0eq1h"]
+
+[node name="Ramp" type="StaticBody3D"]
+transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.49691e-07, 0, -4, 0, 4, 0, 8, 0, -1.74846e-07, 0, 0, 0)
+mesh = SubResource("PrismMesh_yy7fk")
+surface_material_override/0 = SubResource("StandardMaterial3D_0eq1h")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.76838e-07, 0, 2)
+depth = 4.0
+polygon = PackedVector2Array(-2, 2, 6, -2, -2, -2)

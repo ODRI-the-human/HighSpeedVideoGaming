@@ -1,8 +1,9 @@
-res://Levels/TestLevel.tscn
+res://LevelBits/Ramp8x4.tscn
+res://Levels/Advanced Level.tscn
 res://Player/Player.tscn
-res://Player/States/State.gd
-res://Player/States/RunState.gd
-res://Player/PlayerControl.gd
-res://Player/States/AirState.gd
-res://Player/PlayerStateMachine.gd
+res://LevelBits/Ramp4x4.tscn
+res://LevelBits/Platform.tscn
+res://Player/WallClimbState.gd
 res://Player/States/SlideState.gd
+res://LevelBits/BasicFloor.tscn
+res://Player/States/GroundSlamState.gd

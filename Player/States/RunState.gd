@@ -22,15 +22,7 @@ func Update(delta):
 		print("fuck shit")
 		Transitioned.emit(self, "WallClimbState")
 	
-	#if currNormal.y > lastFloorNormal.y && abs(lastFloorNormal.y - currNormal.y) > 0.2:
-	#	print("now that's just bonkers you went over a freaking ramp buddy")
-	#	playerObj.velocity = playerObj.get_real_velocity()
-	#	playerObj.updateSpeed = false
-	#	Transitioned.emit(self, "AirState")
-	if !playerObj.is_on_floor():
-		playerObj.velocity = playerObj.lastRealVelocity
-		playerObj.updateSpeed = false
-		Transitioned.emit(self, "AirState")
+	CheckIfToBecomeAirborne()
 	
 	if playerObj.updateSpeed:
 		accelSpeed = maxSpeed * 6
@@ -62,6 +54,4 @@ func Update(delta):
 		Transitioned.emit(self, "SlideState")
 	
 	if Input.is_action_just_pressed("jump"):
-		playerObj.updateSpeed = false
-		playerObj.velocity.y = playerObj.jumpVel
-		Transitioned.emit(self, "AirState")
+		ActivateJump(0)

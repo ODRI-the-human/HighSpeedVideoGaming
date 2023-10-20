@@ -11,6 +11,7 @@ var gravityActive = true
 var speedState = 0 # 0 for normal speed. When moving at over 30 speed, goes to 1, at over 60 it goes to 2. Needed for some abilities n such
 var lastVelocity : Vector3
 var lastRealVelocity : Vector3
+var lastFloorNormal : Vector3
 var updateSpeed = true
 
 var canAirPunch = true
@@ -27,6 +28,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	floor_max_angle = deg_to_rad(85)
 	floor_snap_length = 2
+	lastFloorNormal = get_floor_normal()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -48,11 +50,6 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
-	
-	if Input.is_action_pressed("slide") && is_on_floor():
-		camera.position.y = -0.7
-	else:
-		camera.position.y = 0
 	
 	camera.fov = clamp(75 + 0.1 * velocity.length() * (1 - clamp(velocity.angle_to(-camera.get_global_transform().basis.z) / deg_to_rad(90), 0, 1)), 75, 100)
 

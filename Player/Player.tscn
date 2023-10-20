@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://hgf6h6jsgdy4"]
+[gd_scene load_steps=14 format=3 uid="uid://hgf6h6jsgdy4"]
 
 [ext_resource type="Script" path="res://Player/PlayerControl.gd" id="1_qq07l"]
 [ext_resource type="PackedScene" uid="uid://bmi63foipxt2m" path="res://Player/fashionHands.glb" id="2_82xoe"]
@@ -12,14 +12,21 @@
 [ext_resource type="Script" path="res://Player/States/AirDiveState.gd" id="8_gfgof"]
 [ext_resource type="Script" path="res://Player/WallClimbState.gd" id="11_jenls"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mumi2"]
+size = Vector3(0.7, 1, 0.7)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_140nd"]
-size = Vector3(0.7, 1.8, 0.7)
+size = Vector3(0.7, 0.8, 0.7)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_qq07l")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+[node name="ColliderTop" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_mumi2")
+
+[node name="ColliderBottom" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_140nd")
 
 [node name="Neck" type="Node3D" parent="."]
