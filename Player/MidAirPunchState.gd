@@ -3,13 +3,13 @@ class_name MidAirPunchState
 
 var maxSpeed = 20
 var dirToFly : Vector3
-var timer = 0
 
 func Enter():
 	print("Entered mid-air punch state")
 	playerObj.canAirPunch = false
 	timer = 0
 	dirToFly = -playerObj.lastVelocity.length() * camera.get_global_transform().basis.z
+	playerObj.wasGrounded = false
 
 func Update(delta):
 	playerObj.updateSpeed = true

@@ -2,13 +2,13 @@ extends State
 class_name SlideState
 
 var speed = 20
-var slideTimer = 0
+var slideLength = 0
 var dirMoving : Vector3
 @onready var colliderTop = $"../../ColliderTop"
 
 func Enter():
 	print("Entered slide state")
-	camera.position.y = -0.9
+	#camera.position.y = -0.9
 	colliderTop.disabled = true
 	
 	if playerObj.velocity.length() >= 1:
@@ -18,13 +18,18 @@ func Enter():
 		dirMoving = dirMoving.normalized() * speed
 	else:
 		dirMoving = Vector3.ZERO
-	slideTimer = 0
+	slideLength = 0
+	timer = 0
+	playerObj.wasGrounded = true
 
 func Exit():
-	camera.position.y = 0
 	colliderTop.disabled = false
 
+func CameraShit():
+	camera.position = Vector3(0, 0, 0).lerp(Vector3(0, -0.9, 0), 1 - pow(clamp(1 - timer * 8, 0, 1), 5))
+
 func Update(delta):
+	timer += delta
 	playerObj.updateSpeed = true
 	playerObj.move_and_slide()
 	
@@ -33,8 +38,10 @@ func Update(delta):
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirState")
 	
-	slideTimer += 0.02 * playerObj.get_position_delta().length()
-	print("slideTimer: ", slideTimer)
+	CheckIfToBecomeAirborne()
+	
+	slideLength += 0.02 * playerObj.get_position_delta().length()
+	#print("slideTimer: ", slideLength)
 	var vel = dirMoving
 	var slopeVec = GetFloorVec()
 	
@@ -43,7 +50,7 @@ func Update(delta):
 	dirMoving += 0.3 * slopeVec
 	
 	if Input.is_action_just_pressed("jump"):
-		ActivateJump(clamp(slideTimer, 0, 1))
+		DoJump()
 	
 	if Input.is_action_just_released("slide"):
 		playerObj.updateSpeed = false
@@ -51,3 +58,6 @@ func Update(delta):
 		newVec.y = 0
 		playerObj.velocity = newVec * playerObj.lastVelocity.length()
 		Transitioned.emit(self, "RunState")
+
+func DoJump():
+	ActivateJump(clamp(slideLength, 0, 1))

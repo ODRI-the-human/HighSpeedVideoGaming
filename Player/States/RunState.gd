@@ -12,6 +12,7 @@ func Enter():
 	#var angle = slopeVec.angle_to(Vector3(playerObj.lastVelocity.x, 0, playerObj.lastVelocity.z))
 	print("Entered run state, lastvelocity: ", playerObj.lastVelocity.length())
 	playerObj.velocity = playerObj.velocity.normalized() * playerObj.lastVelocity.length()
+	playerObj.wasGrounded = true
 
 func Update(delta):
 	playerObj.updateSpeed = true
@@ -54,4 +55,7 @@ func Update(delta):
 		Transitioned.emit(self, "SlideState")
 	
 	if Input.is_action_just_pressed("jump"):
-		ActivateJump(0)
+		DoJump()
+
+func DoJump():
+	ActivateJump(0)

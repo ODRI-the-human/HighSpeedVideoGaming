@@ -11,8 +11,12 @@ var gravityActive = true
 var speedState = 0 # 0 for normal speed. When moving at over 30 speed, goes to 1, at over 60 it goes to 2. Needed for some abilities n such
 var lastVelocity : Vector3
 var lastRealVelocity : Vector3
+var currFloorNormal : Vector3
 var lastFloorNormal : Vector3
 var updateSpeed = true
+var wasGrounded = true # used for coyote time, set at the end of the enter of every state. If this is true when 
+#                        entering airState, the coyote timer is started.
+
 
 var canAirPunch = true
 
@@ -28,7 +32,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	floor_max_angle = deg_to_rad(85)
 	floor_snap_length = 2
-	lastFloorNormal = get_floor_normal()
+	currFloorNormal = get_floor_normal()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -37,7 +41,7 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _process(delta):
-	textLabel.text = "hey buckaroo 'last' velocity: " + str(lastVelocity.length()) + "\nlast velocity components:\n" + str(lastVelocity.x) + "\n" + str(lastVelocity.y) + "\n" + str(lastVelocity.z) + "\nlast real velocity: " + str(lastRealVelocity.length()) + "\nlast real velocity components:\n" + str(lastRealVelocity.x) + "\n" + str(lastRealVelocity.y) + "\n" + str(lastRealVelocity.z) + "\nand current state: " + str(stateMachine.current_state)
+	textLabel.text = "hey buckaroo 'last' velocity: " + str(lastVelocity.length()) + "\nlast velocity components:\n" + str(lastVelocity.x) + "\n" + str(lastVelocity.y) + "\n" + str(lastVelocity.z) + "\nlast real velocity: " + str(lastRealVelocity.length()) + "\nlast real velocity components:\n" + str(lastRealVelocity.x) + "\n" + str(lastRealVelocity.y) + "\n" + str(lastRealVelocity.z) + "\ncurrent state: " + str(stateMachine.current_state) + "\nprevious state: " + str(stateMachine.previous_state) + "\nfloor normal components:\n" + str(lastFloorNormal.x) + "\n" + str(lastFloorNormal.y) + "\n" + str(lastFloorNormal.z)
 	speedState = clamp(floor(lastVelocity.length()/45), 0, 2)
 	
 	if Input.is_action_just_pressed("ui_cancel"):

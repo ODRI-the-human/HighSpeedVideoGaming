@@ -2,14 +2,35 @@ extends State
 class_name AirState
 
 var canWallClimbOrRun = true
+var maxSpeed = 0
+var coyoteTimer = 0
 
 func Enter():
+	maxSpeed = max(Vector3(playerObj.velocity.x, 0, playerObj.velocity.z).length(), 20)
+	if playerObj.wasGrounded:
+		coyoteTimer = 0
+	else:
+		coyoteTimer = 50
+	
 	print("Entered air state, velocity vec: ", playerObj.velocity)
 	canWallClimbOrRun = true
 	playerObj.gravityActive = true
+	playerObj.wasGrounded = false
 
 func Update(delta):
+	if Input.is_action_just_pressed("jump"):
+		if coyoteTimer < 0.2:
+			print("ass")
+			playerObj.stateMachine.previous_state.DoJump()
+	
+	coyoteTimer += delta
+	#print("coyote's timer: ", coyoteTimer)
+	
 	playerObj.updateSpeed = true
+	var newHorVec = Vector3(playerObj.velocity.x, 0, playerObj.velocity.z) + 0.05 * playerObj.direction
+	if newHorVec.length() > maxSpeed:
+		newHorVec = maxSpeed * newHorVec.normalized()
+	playerObj.velocity = Vector3(newHorVec.x, playerObj.velocity.y, newHorVec.z)
 	playerObj.move_and_slide()
 	
 	if playerObj.is_on_floor():

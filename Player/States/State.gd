@@ -5,6 +5,11 @@ signal Transitioned
 
 @onready var playerObj = $"../.."
 @onready var camera = $"../../Neck/Camera3D"
+var timer = 0 # tracks how long the player has been in a state.
+var startingCameraPosition : Vector3
+
+func SetCamPosition():
+	startingCameraPosition = camera.position
 
 func Enter():
 	pass
@@ -15,8 +20,12 @@ func Exit():
 func Update(_delta: float):
 	pass
 
+func CameraShit():
+	#print("gomber")
+	camera.position = startingCameraPosition.lerp(Vector3(0, 0, 0), 1 - pow(clamp(1 - timer * 8, 0, 1), 5))
+
 func CheckIfToBecomeAirborne(): #General stuff for checking if the player should become airborne when in grounded state
-	if !playerObj.is_on_floor() || (playerObj.get_floor_normal().y > playerObj.lastFloorNormal.y + 0.2 && playerObj.get_floor_normal().y == 1):
+	if !playerObj.is_on_floor() || (playerObj.get_floor_normal().y > playerObj.currFloorNormal.y + 0.2 && playerObj.get_floor_normal().y == 1):
 		print("television")
 		playerObj.velocity = playerObj.lastVelocity.length() * playerObj.lastRealVelocity.normalized()
 		playerObj.updateSpeed = false
@@ -24,8 +33,11 @@ func CheckIfToBecomeAirborne(): #General stuff for checking if the player should
 
 func ActivateJump(normalBias): 
 	#   jumpFactor is mainly used by slide, to make the player jumo higher if needed.
+	playerObj.wasGrounded = false
+	print("jumping, floor normal: ", playerObj.lastFloorNormal)
 	playerObj.updateSpeed = false
 	var speed = playerObj.lastRealVelocity.length()
+	playerObj.lastRealVelocity.y = clamp(playerObj.lastRealVelocity.y, 0, 100000)
 	
 	playerObj.velocity = (1 - 0.8 * normalBias) * playerObj.lastRealVelocity + 5 * (1 + 0.2 * speed * normalBias) * playerObj.lastFloorNormal
 	Transitioned.emit(self, "AirState")

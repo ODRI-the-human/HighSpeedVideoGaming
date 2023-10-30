@@ -19,6 +19,7 @@ func Enter():
 	#playerObj.velocity = Vector3.UP.rotated(normalVec, deg_to_rad(90 * dotProd)) * playerObj.lastVelocity.length()
 	#print("dot prod: ", dotProd, " / new velocity: ", playerObj.velocity, " / lastOnFloorSpeed: ", playerObj.lastVelocity)
 	playerObj.gravityActive = true
+	playerObj.wasGrounded = true
 
 func Update(delta):
 	playerObj.updateSpeed = true
@@ -29,14 +30,18 @@ func Update(delta):
 		Transitioned.emit(self, "AirState")
 	
 	if Input.is_action_just_pressed("jump"):
-		playerObj.updateSpeed = false
-		playerObj.velocity += 1.5 * normalVec * playerObj.lastVelocity.length()
-		playerObj.velocity.y += playerObj.jumpVel * playerObj.lastVelocity.length()
-		playerObj.velocity = playerObj.velocity.normalized() * playerObj.lastVelocity.length()
-		Transitioned.emit(self, "AirState")
+		DoJump()
 	
 	if Input.is_action_just_pressed("slide"):
 		playerObj.updateSpeed = false
 		playerObj.velocity += 2.5 * normalVec
 		playerObj.velocity.y = 0
 		Transitioned.emit(self, "AirState")
+
+func DoJump():
+	playerObj.wasGrounded = false
+	playerObj.updateSpeed = false
+	playerObj.velocity += 1.5 * normalVec * playerObj.lastVelocity.length()
+	playerObj.velocity.y += playerObj.jumpVel * playerObj.lastVelocity.length()
+	playerObj.velocity = playerObj.velocity.normalized() * playerObj.lastVelocity.length()
+	Transitioned.emit(self, "AirState")

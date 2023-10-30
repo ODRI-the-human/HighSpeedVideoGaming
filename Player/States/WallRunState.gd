@@ -23,6 +23,7 @@ func Enter():
 	print("Entered wall run state")
 	playerObj.canAirPunch = true
 	GetWallNormal()
+	playerObj.wasGrounded = true
 
 func Update(delta):
 	playerObj.updateSpeed = true
@@ -40,12 +41,8 @@ func Update(delta):
 	#playerObj.velocity -= normalVec * 2 # Otherwise the player can become unstuck from the wall.
 	
 	if Input.is_action_just_pressed("jump"):
-		playerObj.updateSpeed = false
-		playerObj.velocity.y = playerObj.jumpVel
-		playerObj.velocity += 5 * normalVec
-		Transitioned.emit(self, "AirState")
-		playerObj.gravityActive = true
-		
+		DoJump()
+	
 	if Input.is_action_just_pressed("slide"):
 		playerObj.updateSpeed = false
 		playerObj.velocity += 2.5 * normalVec
@@ -56,3 +53,11 @@ func Update(delta):
 	
 	if currNormVec != normalVec && currNormVec != Vector3.ZERO:
 		GetWallNormal()
+
+func DoJump():
+	playerObj.wasGrounded = false
+	playerObj.updateSpeed = false
+	playerObj.velocity.y = playerObj.jumpVel
+	playerObj.velocity += 5 * normalVec
+	Transitioned.emit(self, "AirState")
+	playerObj.gravityActive = true

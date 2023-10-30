@@ -4,6 +4,7 @@ extends Node
 @onready var playerObj = $".."
 
 var current_state : State
+var previous_state : State
 var states : Dictionary = {}
 
 func _ready():
@@ -18,11 +19,17 @@ func _ready():
 
 func _process(delta):
 	if current_state:
+		current_state.timer += delta
 		current_state.Update(delta)
+		current_state.CameraShit()
 		if playerObj.updateSpeed:
 			playerObj.lastRealVelocity = playerObj.get_real_velocity()
 			playerObj.lastVelocity = playerObj.velocity
-		playerObj.lastFloorNormal = playerObj.get_floor_normal()
+			if playerObj.is_on_floor():
+				playerObj.lastFloorNormal = playerObj.get_floor_normal()
+		playerObj.currFloorNormal = playerObj.get_floor_normal()
+	
+	
 
 #func _physics_process(delta):
 	#if current_state:
@@ -37,8 +44,10 @@ func _on_child_transition(state, new_state_name):
 		return
 	
 	if current_state:
+		previous_state = current_state
 		current_state.Exit()
 	
+	new_state.timer = 0
+	new_state.SetCamPosition()
 	new_state.Enter()
-	
 	current_state = new_state
