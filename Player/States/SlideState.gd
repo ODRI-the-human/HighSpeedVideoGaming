@@ -19,7 +19,6 @@ func Enter():
 	else:
 		dirMoving = Vector3.ZERO
 	slideLength = 0
-	timer = 0
 	playerObj.wasGrounded = true
 
 func Exit():
@@ -29,7 +28,6 @@ func CameraShit():
 	camera.position = Vector3(0, 0, 0).lerp(Vector3(0, -0.9, 0), 1 - pow(clamp(1 - timer * 8, 0, 1), 5))
 
 func Update(delta):
-	timer += delta
 	playerObj.updateSpeed = true
 	playerObj.move_and_slide()
 	
