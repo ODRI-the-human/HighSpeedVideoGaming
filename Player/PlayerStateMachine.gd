@@ -7,10 +7,16 @@ var current_state : State
 var previous_state : State
 var states : Dictionary = {}
 
+@export var AnimTree: AnimationTree
+@export var animPlayer : AnimationPlayer
+
+var currState # For any weapons, enemy attacks, and the like that are context-sensitive in terms of state.
+
 func _ready():
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
+			print("added state: ", child.name.to_lower())
 			child.Transitioned.connect(_on_child_transition)
 	
 	if initial_state:
@@ -36,9 +42,6 @@ func _process(delta):
 		#current_state.Physics_Update(delta)
 
 func _on_child_transition(state, new_state_name):
-	if state != current_state:
-		return
-	
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
 		return

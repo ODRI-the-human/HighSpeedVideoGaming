@@ -16,12 +16,14 @@ func Enter():
 	canWallClimbOrRun = true
 	playerObj.gravityActive = true
 	playerObj.wasGrounded = false
+	playerObj.stateMachine.currState = PLAYERSTATES.AIR
 
 func Update(delta):
 	if Input.is_action_just_pressed("jump"):
 		if coyoteTimer < 0.2:
 			print("ass")
 			playerObj.stateMachine.previous_state.DoJump()
+			return
 	
 	coyoteTimer += delta
 	#print("coyote's timer: ", coyoteTimer)
@@ -37,6 +39,7 @@ func Update(delta):
 		SetJumpLandingVelocity()
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "RunState")
+		return
 		
 	if playerObj.is_on_wall() && canWallClimbOrRun:
 		canWallClimbOrRun = false
@@ -49,18 +52,23 @@ func Update(delta):
 		if angle > deg_to_rad(45):
 			playerObj.updateSpeed = false
 			Transitioned.emit(self, "WallRunState")
+			return
 		elif playerObj.lastVelocity.y > 20:
 			playerObj.updateSpeed = false
 			Transitioned.emit(self, "WallClimbState")
+			return
 	
 	if Input.is_action_just_pressed("slide"):
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirDiveState")
+		return
 	
 	if Input.is_action_just_pressed("slam"):
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "GroundSlamState")
+		return
 	
 	if Input.is_action_just_pressed("attack") && playerObj.canAirPunch:
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "MidAirPunchState")
+		return

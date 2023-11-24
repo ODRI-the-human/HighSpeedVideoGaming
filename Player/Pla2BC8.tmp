@@ -1,0 +1,188 @@
+[gd_scene load_steps=25 format=3 uid="uid://imj1fv8uq3o3"]
+
+[ext_resource type="Script" path="res://Player/PlayerControl.gd" id="1_qq07l"]
+[ext_resource type="PackedScene" uid="uid://us10rjtebnfb" path="res://Player/FirstPersonHands.glb" id="2_5d7u1"]
+[ext_resource type="PackedScene" uid="uid://bmi63foipxt2m" path="res://Player/fashionHands.glb" id="2_82xoe"]
+[ext_resource type="Script" path="res://Player/PlayerStateMachine.gd" id="3_giv07"]
+[ext_resource type="Texture2D" uid="uid://h3467hv485yj" path="res://Player/frickule.png" id="3_hnebs"]
+[ext_resource type="Script" path="res://Player/States/RunState.gd" id="4_r5min"]
+[ext_resource type="Script" path="res://Player/MidAirPunchState.gd" id="5_2hol0"]
+[ext_resource type="Script" path="res://Player/States/AirState.gd" id="5_e0p1n"]
+[ext_resource type="Script" path="res://Player/States/WallRunState.gd" id="5_okm6e"]
+[ext_resource type="Script" path="res://Player/States/SlideState.gd" id="6_pe2cu"]
+[ext_resource type="Script" path="res://Player/States/GroundSlamState.gd" id="6_wb8ly"]
+[ext_resource type="Script" path="res://Player/States/AirDiveState.gd" id="8_gfgof"]
+[ext_resource type="Script" path="res://Player/WallClimbState.gd" id="11_jenls"]
+[ext_resource type="Script" path="res://Player/Weapons/WeaponMan.gd" id="12_pj6ex"]
+[ext_resource type="Script" path="res://Player/Weapons/Grapple/Grap.gd" id="14_loa32"]
+[ext_resource type="Script" path="res://Player/Weapons/Grapple/GrapRetractState.gd" id="15_dejrs"]
+[ext_resource type="Script" path="res://Player/Weapons/Grapple/GrapYankState.gd" id="16_wq537"]
+[ext_resource type="Animation" uid="uid://bkm1apwcagbli" path="res://Player/Anims/Khopesh/KhopeshSwing.res" id="17_asl11"]
+[ext_resource type="Animation" uid="uid://csu2iu43udac5" path="res://Player/Anims/Khopesh/KhopeshParry.res" id="19_yjip6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mumi2"]
+size = Vector3(0.7, 1, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_140nd"]
+size = Vector3(0.7, 0.8, 0.7)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pwwb5"]
+animation = &"khopeshParry"
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dhjon"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymqsa"]
+albedo_color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_qq07l")
+
+[node name="ColliderTop" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_mumi2")
+
+[node name="ColliderBottom" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_140nd")
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85831, 0.0363011)
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="FirstPersonHands" parent="Neck/Camera3D" instance=ExtResource("2_5d7u1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.768, -0.036)
+
+[node name="Skeleton3D" parent="Neck/Camera3D/FirstPersonHands/metarig" index="0"]
+bones/24/rotation = Quaternion(-0.699414, 0.104018, 0.699414, -0.104018)
+bones/26/rotation = Quaternion(-0.00827172, 0.803221, -0.266662, 0.532597)
+bones/28/position = Vector3(-0.00348353, 0.236004, -0.000496848)
+bones/28/rotation = Quaternion(0.103191, 0.042585, -0.0332973, 0.993192)
+bones/29/rotation = Quaternion(-0.0422067, 0.739211, -0.268917, 0.616011)
+bones/30/rotation = Quaternion(0.168341, 0.00964974, -0.0713489, 0.983096)
+bones/31/position = Vector3(0.0518289, 0.316799, 0.00562209)
+bones/31/rotation = Quaternion(0.168342, 0.00964976, -0.0713489, 0.983096)
+bones/33/rotation = Quaternion(0.223537, -0.574973, 0.536709, 0.575657)
+bones/34/rotation = Quaternion(0.788542, -0.000804698, 0.175666, 0.589357)
+bones/35/position = Vector3(0.00722117, 0.212015, -0.0102667)
+bones/35/rotation = Quaternion(0.420076, -0.0399816, 0.104209, 0.900599)
+bones/36/rotation = Quaternion(0.205775, -0.563924, 0.544602, 0.585709)
+bones/37/rotation = Quaternion(0.782734, -0.0113316, 0.202193, 0.588487)
+bones/38/position = Vector3(-0.0475968, 0.310618, -0.0150544)
+bones/38/rotation = Quaternion(0.782734, -0.0113316, 0.202193, 0.588487)
+bones/42/rotation = Quaternion(-0.711015, -0.317552, -0.351828, 0.519457)
+bones/43/rotation = Quaternion(-0.690122, 0.376242, 0.408522, 0.463987)
+bones/44/rotation = Quaternion(0.767962, 0.22406, 0.433209, -0.415165)
+bones/45/rotation = Quaternion(0.711352, -0.270352, -0.399496, -0.511167)
+bones/52/position = Vector3(3.19247e-09, 0.477669, 0.000321641)
+bones/52/rotation = Quaternion(0.0534157, 1.18925e-07, 8.50583e-09, 0.998572)
+bones/53/rotation = Quaternion(0.88433, -0.125113, -0.449762, 0.00462725)
+bones/55/position = Vector3(-5.07806e-09, 0.477629, 0.000317104)
+bones/55/rotation = Quaternion(0.0534166, -1.18862e-07, -9.66702e-09, 0.998572)
+bones/58/rotation = Quaternion(0.88433, 0.125113, 0.449762, 0.00462725)
+bones/59/rotation = Quaternion(0.987203, 6.85601e-09, -1.13747e-09, 0.159468)
+bones/60/rotation = Quaternion(0.0833563, -1.31801e-09, 1.4998e-08, 0.99652)
+bones/61/rotation = Quaternion(0.987203, -6.85601e-09, 1.13747e-09, 0.159468)
+bones/62/rotation = Quaternion(0.0833563, 1.31801e-09, -1.4998e-08, 0.99652)
+bones/63/rotation = Quaternion(0.999003, 0.00647348, -0.000296054, 0.044172)
+bones/64/rotation = Quaternion(0.999003, -0.00647348, 0.000296054, 0.044172)
+bones/65/rotation = Quaternion(0.999024, 5.4484e-09, 1.19089e-07, 0.0441732)
+bones/66/rotation = Quaternion(0.999024, -5.4484e-09, -1.19089e-07, 0.0441732)
+bones/67/rotation = Quaternion(0.987203, 6.85601e-09, -1.13747e-09, 0.159468)
+bones/68/rotation = Quaternion(0.987203, -6.85601e-09, 1.13747e-09, 0.159468)
+bones/69/position = Vector3(-0.190397, 1.51869, 0.292068)
+bones/69/rotation = Quaternion(0.0342532, 0.816565, 0.562834, -0.123558)
+bones/71/rotation = Quaternion(0.6698, 0.00737212, 0.0759177, 0.738613)
+bones/72/rotation = Quaternion(0.600204, 0.00860683, 0.00147507, 0.799799)
+bones/73/rotation = Quaternion(0.628088, 0.02321, 0.0224059, 0.777474)
+bones/78/rotation = Quaternion(0.704815, 0.00329563, 0.0321101, 0.708657)
+bones/79/rotation = Quaternion(0.631852, 0.0391316, -0.00725537, 0.774066)
+bones/80/rotation = Quaternion(0.584009, 0.0268098, 0.00501865, 0.811289)
+bones/82/rotation = Quaternion(0.75225, 0.00980611, -0.00283306, 0.658799)
+bones/83/rotation = Quaternion(0.596732, 0.0287128, 0.00628953, 0.801902)
+bones/84/rotation = Quaternion(0.660716, 0.0545827, 0.00877401, 0.748598)
+bones/86/rotation = Quaternion(0.690203, 0.0569543, -0.0294464, 0.72077)
+bones/87/rotation = Quaternion(0.433152, 0.0162646, 0.0106842, 0.901111)
+bones/88/rotation = Quaternion(0.47136, 0.0197944, 0.00793863, 0.881683)
+bones/89/rotation = Quaternion(0.433914, 0.255924, 0.821042, -0.268538)
+bones/90/rotation = Quaternion(0.742275, 0.143677, 0.649896, -0.0775899)
+bones/111/rotation = Quaternion(-0.472562, -0.0172278, 0.881114, 0.00512358)
+bones/112/rotation = Quaternion(0.753807, 0.029448, -0.656428, -0.00303308)
+bones/116/rotation = Quaternion(-0.847702, -5.62746e-08, 1.05377e-07, 0.530473)
+bones/125/rotation = Quaternion(-0.847702, 5.62746e-08, -1.05377e-07, 0.530473)
+
+[node name="AnimationTree" type="AnimationTree" parent="Neck/Camera3D/FirstPersonHands"]
+tree_root = SubResource("AnimationNodeAnimation_pwwb5")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Neck/Camera3D"]
+offset_right = 718.0
+offset_bottom = 712.0
+text = "get got"
+
+[node name="RayCast3D" type="RayCast3D" parent="Neck/Camera3D"]
+target_position = Vector3(0, 0, -100)
+
+[node name="Sprite3D" type="Sprite3D" parent="Neck/Camera3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, -0.1)
+pixel_size = 0.001
+texture = ExtResource("3_hnebs")
+
+[node name="grappleRope" type="Node3D" parent="Neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0906054, -0.275473, -0.435081)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Neck/Camera3D/grappleRope"]
+transform = Transform3D(0.05, 0, 0, 0, -4.37114e-08, -0.05, 0, 1, -2.18557e-09, 0, 0, -1)
+mesh = SubResource("CylinderMesh_dhjon")
+skeleton = NodePath("../../../../MovementStateMachine/Grap")
+surface_material_override/0 = SubResource("StandardMaterial3D_ymqsa")
+
+[node name="fashionHands" parent="Neck/Camera3D" instance=ExtResource("2_82xoe")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.768, -0.036)
+visible = false
+
+[node name="MovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "AnimTree")]
+script = ExtResource("3_giv07")
+initial_state = NodePath("RunState")
+AnimTree = NodePath("../Neck/Camera3D/FirstPersonHands/AnimationTree")
+
+[node name="RunState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("4_r5min")
+
+[node name="WallRunState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("5_okm6e")
+
+[node name="MidAirPunchState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("5_2hol0")
+
+[node name="AirState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("5_e0p1n")
+
+[node name="GroundSlamState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("6_wb8ly")
+
+[node name="AirDiveState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("8_gfgof")
+
+[node name="SlideState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("6_pe2cu")
+
+[node name="WallClimbState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("11_jenls")
+
+[node name="WeaponManager" type="Node" parent="MovementStateMachine"]
+script = ExtResource("12_pj6ex")
+
+[node name="Grap" type="Node" parent="MovementStateMachine"]
+script = ExtResource("14_loa32")
+
+[node name="GrapYankState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("16_wq537")
+animation = ExtResource("17_asl11")
+
+[node name="GrapRetractState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("15_dejrs")
+animation = ExtResource("19_yjip6")
+
+[editable path="Neck/Camera3D/FirstPersonHands"]

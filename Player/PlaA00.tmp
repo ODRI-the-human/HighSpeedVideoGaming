@@ -1,0 +1,91 @@
+[gd_scene load_steps=18 format=3 uid="uid://imj1fv8uq3o3"]
+
+[ext_resource type="Script" path="res://Player/PlayerControl.gd" id="1_qq07l"]
+[ext_resource type="PackedScene" uid="uid://bmi63foipxt2m" path="res://Player/fashionHands.glb" id="2_82xoe"]
+[ext_resource type="Script" path="res://Player/PlayerStateMachine.gd" id="3_giv07"]
+[ext_resource type="Texture2D" uid="uid://h3467hv485yj" path="res://Player/frickule.png" id="3_hnebs"]
+[ext_resource type="Script" path="res://Player/States/RunState.gd" id="4_r5min"]
+[ext_resource type="Script" path="res://Player/MidAirPunchState.gd" id="5_2hol0"]
+[ext_resource type="Script" path="res://Player/States/AirState.gd" id="5_e0p1n"]
+[ext_resource type="Script" path="res://Player/States/WallRunState.gd" id="5_okm6e"]
+[ext_resource type="Script" path="res://Player/States/SlideState.gd" id="6_pe2cu"]
+[ext_resource type="Script" path="res://Player/States/GroundSlamState.gd" id="6_wb8ly"]
+[ext_resource type="Script" path="res://Player/States/AirDiveState.gd" id="8_gfgof"]
+[ext_resource type="Script" path="res://Player/WallClimbState.gd" id="11_jenls"]
+[ext_resource type="Script" path="res://Player/Weapons/WeaponMan.gd" id="12_pj6ex"]
+[ext_resource type="Script" path="res://Player/Weapons/Grapple/Grap.gd" id="14_loa32"]
+[ext_resource type="Script" path="res://Player/Weapons/Grapple/GrapRetractState.gd" id="15_dejrs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mumi2"]
+size = Vector3(0.7, 1, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_140nd"]
+size = Vector3(0.7, 0.8, 0.7)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_qq07l")
+
+[node name="ColliderTop" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("BoxShape3D_mumi2")
+
+[node name="ColliderBottom" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_140nd")
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85831, 0.0363011)
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="fashionHands" parent="Neck/Camera3D" instance=ExtResource("2_82xoe")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.768, -0.036)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Neck/Camera3D"]
+offset_right = 718.0
+offset_bottom = 712.0
+text = "get got"
+
+[node name="RayCast3D" type="RayCast3D" parent="Neck/Camera3D"]
+target_position = Vector3(0, 0, -100)
+
+[node name="Sprite3D" type="Sprite3D" parent="Neck/Camera3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, -1)
+texture = ExtResource("3_hnebs")
+
+[node name="MovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_giv07")
+initial_state = NodePath("RunState")
+
+[node name="RunState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("4_r5min")
+
+[node name="WallRunState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("5_okm6e")
+
+[node name="MidAirPunchState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("5_2hol0")
+
+[node name="AirState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("5_e0p1n")
+
+[node name="GroundSlamState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("6_wb8ly")
+
+[node name="AirDiveState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("8_gfgof")
+
+[node name="SlideState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("6_pe2cu")
+
+[node name="WallClimbState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("11_jenls")
+
+[node name="WeaponManager" type="Node" parent="MovementStateMachine"]
+script = ExtResource("12_pj6ex")
+
+[node name="Grap" type="Node" parent="MovementStateMachine"]
+script = ExtResource("14_loa32")
+
+[node name="GrapRetractState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("15_dejrs")

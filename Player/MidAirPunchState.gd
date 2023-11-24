@@ -10,6 +10,7 @@ func Enter():
 	timer = 0
 	dirToFly = -playerObj.lastVelocity.length() * camera.get_global_transform().basis.z
 	playerObj.wasGrounded = false
+	playerObj.stateMachine.currState = PLAYERSTATES.AIRPUNCH
 
 func Update(delta):
 	playerObj.updateSpeed = true
@@ -17,6 +18,7 @@ func Update(delta):
 	
 	if timer > 0.2:
 		Transitioned.emit(self, "AirState")
+		return
 	
 	playerObj.velocity = dirToFly
 	timer += delta

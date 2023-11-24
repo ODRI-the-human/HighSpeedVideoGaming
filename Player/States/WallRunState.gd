@@ -24,6 +24,7 @@ func Enter():
 	playerObj.canAirPunch = true
 	GetWallNormal()
 	playerObj.wasGrounded = true
+	playerObj.stateMachine.currState = PLAYERSTATES.WALLRUN
 
 func Update(delta):
 	playerObj.updateSpeed = true
@@ -34,6 +35,7 @@ func Update(delta):
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirState")
 		playerObj.gravityActive = true
+		return
 	
 	playerObj.velocity.x = dirMoving.x
 	playerObj.velocity.y = 0
@@ -42,12 +44,14 @@ func Update(delta):
 	
 	if Input.is_action_just_pressed("jump"):
 		DoJump()
+		return
 	
 	if Input.is_action_just_pressed("slide"):
 		playerObj.updateSpeed = false
 		playerObj.velocity += 2.5 * normalVec
 		Transitioned.emit(self, "AirState")
 		playerObj.gravityActive = true
+		return
 	
 	var currNormVec = playerObj.get_wall_normal()
 	
@@ -61,3 +65,4 @@ func DoJump():
 	playerObj.velocity += 5 * normalVec
 	Transitioned.emit(self, "AirState")
 	playerObj.gravityActive = true
+	return

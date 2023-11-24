@@ -20,6 +20,7 @@ func Enter():
 	#print("dot prod: ", dotProd, " / new velocity: ", playerObj.velocity, " / lastOnFloorSpeed: ", playerObj.lastVelocity)
 	playerObj.gravityActive = true
 	playerObj.wasGrounded = true
+	playerObj.stateMachine.currState = PLAYERSTATES.WALLCLIMB
 
 func Update(delta):
 	playerObj.updateSpeed = true
@@ -28,15 +29,18 @@ func Update(delta):
 	if !playerObj.is_on_wall():
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirState")
+		return
 	
 	if Input.is_action_just_pressed("jump"):
 		DoJump()
+		return
 	
 	if Input.is_action_just_pressed("slide"):
 		playerObj.updateSpeed = false
 		playerObj.velocity += 2.5 * normalVec
 		playerObj.velocity.y = 0
 		Transitioned.emit(self, "AirState")
+		return
 
 func DoJump():
 	playerObj.wasGrounded = false
@@ -45,3 +49,4 @@ func DoJump():
 	playerObj.velocity.y += playerObj.jumpVel * playerObj.lastVelocity.length()
 	playerObj.velocity = playerObj.velocity.normalized() * playerObj.lastVelocity.length()
 	Transitioned.emit(self, "AirState")
+	return

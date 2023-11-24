@@ -15,6 +15,7 @@ func Enter():
 	playerObj.wasGrounded = true
 
 func Update(delta):
+	playerObj.stateMachine.currState = PLAYERSTATES.RUN
 	playerObj.updateSpeed = true
 	playerObj.move_and_slide()
 	
@@ -22,6 +23,7 @@ func Update(delta):
 		playerObj.updateSpeed = false
 		print("fuck shit")
 		Transitioned.emit(self, "WallClimbState")
+		return
 	
 	CheckIfToBecomeAirborne()
 	
@@ -52,10 +54,14 @@ func Update(delta):
 	
 	if Input.is_action_pressed("slide"):
 		playerObj.updateSpeed = false
+		playerObj.lastVelocity = playerObj.velocity
 		Transitioned.emit(self, "SlideState")
+		return
 	
 	if Input.is_action_just_pressed("jump"):
 		DoJump()
+		return
 
 func DoJump():
 	ActivateJump(0)
+	return

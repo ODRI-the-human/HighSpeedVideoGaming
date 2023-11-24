@@ -7,6 +7,7 @@ var accelSpeed = 10
 func Enter():
 	print("Entered ground slam state")
 	playerObj.wasGrounded = false
+	playerObj.stateMachine.currState = PLAYERSTATES.AIRSLAM
 
 func Update(delta):
 	playerObj.updateSpeed = true
@@ -16,6 +17,7 @@ func Update(delta):
 		SetJumpLandingVelocity()
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "RunState")
+		return
 	
 	if playerObj.updateSpeed:
 		playerObj.velocity.x = 0

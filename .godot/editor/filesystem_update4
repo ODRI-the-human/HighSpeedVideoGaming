@@ -1,2 +1,9 @@
 res://Player/Player.tscn
-res://Player/States/SlideState.gd
+res://Levels/Advanced Level.tscn
+res://LevelBits/Ramp4x4.tscn
+res://LevelBits/Ramp8x4.tscn
+res://LevelBits/GrappleBall.tscn
+res://LevelBits/BasicFloor.tscn
+res://LevelBits/Platform.tscn
+res://Player/Weapons/Grapple/GrapRetractState.gd
+res://Player/Weapons/Grapple/GrapYankState.gd

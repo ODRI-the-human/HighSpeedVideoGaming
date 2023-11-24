@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu4sjfbmbicyd"]
+[gd_scene load_steps=10 format=3 uid="uid://cu4sjfbmbicyd"]
 
-[ext_resource type="PackedScene" uid="uid://hgf6h6jsgdy4" path="res://Player/Player.tscn" id="1_vgyq2"]
+[ext_resource type="PackedScene" uid="uid://imj1fv8uq3o3" path="res://Player/Player.tscn" id="1_vgyq2"]
 [ext_resource type="PackedScene" uid="uid://bpy3tygr4fqui" path="res://LevelBits/BasicFloor.tscn" id="2_mjfnn"]
 [ext_resource type="PackedScene" uid="uid://ckmdgmbjvviax" path="res://LevelBits/Ramp8x4.tscn" id="3_my3vf"]
 [ext_resource type="PackedScene" uid="uid://b0julw7h77xrj" path="res://LevelBits/Ramp4x4.tscn" id="4_nsqyd"]
 [ext_resource type="PackedScene" uid="uid://bertisb6vtdpb" path="res://LevelBits/Platform.tscn" id="5_l64gg"]
+[ext_resource type="PackedScene" uid="uid://btdmhdyqyhohw" path="res://LevelBits/GrappleBall.tscn" id="6_dsfwb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jlkfp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,9 +27,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.60975, 0)
 environment = SubResource("Environment_j4wp4")
 
 [node name="Player" parent="." instance=ExtResource("1_vgyq2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05546, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 46.0555, -30.6498)
 
 [node name="Pedestal" parent="." instance=ExtResource("2_mjfnn")]
+
+[node name="Pedestal19" parent="." instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.7846, 44.08, -31.3499)
 
 [node name="Ramp" parent="." instance=ExtResource("3_my3vf")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, 6, 0, 0)
@@ -884,3 +888,24 @@ transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85,
 
 [node name="Ramp24" parent="." instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -220)
+
+[node name="GrappleBall" parent="." instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3, 13.6097, -53)
+
+[node name="GrappleBall2" parent="." instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -25.179, 51.0965, -88.7592)
+
+[node name="GrappleBall3" parent="." instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 51.0965, -135.895)
+
+[node name="GrappleBall4" parent="." instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 92.388, -184.067)
+
+[node name="GrappleBall5" parent="." instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 126.15, -138.743)
+
+[node name="GrappleBall6" parent="." instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 126.15, -53.9277)
+
+[node name="GrappleBall7" parent="." instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 72.6788, 117.129)

@@ -20,6 +20,7 @@ func Enter():
 		dirMoving = Vector3.ZERO
 	slideLength = 0
 	playerObj.wasGrounded = true
+	playerObj.stateMachine.currState = PLAYERSTATES.SLIDE
 
 func Exit():
 	colliderTop.disabled = false
@@ -35,6 +36,7 @@ func Update(delta):
 		playerObj.velocity = playerObj.lastRealVelocity
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirState")
+		return
 	
 	CheckIfToBecomeAirborne()
 	
@@ -49,6 +51,7 @@ func Update(delta):
 	
 	if Input.is_action_just_pressed("jump"):
 		DoJump()
+		return
 	
 	if Input.is_action_just_released("slide"):
 		playerObj.updateSpeed = false
@@ -56,6 +59,8 @@ func Update(delta):
 		newVec.y = 0
 		playerObj.velocity = newVec * playerObj.lastVelocity.length()
 		Transitioned.emit(self, "RunState")
+		return
 
 func DoJump():
 	ActivateJump(clamp(slideLength, 0, 1))
+	return
