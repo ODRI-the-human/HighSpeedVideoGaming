@@ -58,7 +58,7 @@ func Update(delta):
 			Transitioned.emit(self, "WallClimbState")
 			return
 	
-	if Input.is_action_just_pressed("slide"):
+	if Input.is_action_pressed("slide"):
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirDiveState")
 		return
@@ -69,6 +69,7 @@ func Update(delta):
 		return
 	
 	if Input.is_action_just_pressed("attack") && playerObj.canAirPunch:
-		playerObj.updateSpeed = false
-		Transitioned.emit(self, "MidAirPunchState")
-		return
+		pass
+		#playerObj.updateSpeed = false
+		#Transitioned.emit(self, "MidAirPunchState")
+		#return

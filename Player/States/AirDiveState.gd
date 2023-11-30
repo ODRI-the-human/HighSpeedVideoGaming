@@ -15,7 +15,7 @@ func Update(delta):
 	playerObj.move_and_slide()
 	
 	if playerObj.is_on_floor():
-		SetJumpLandingVelocity()
+		#SetJumpLandingVelocity()
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "RunState")
 		return

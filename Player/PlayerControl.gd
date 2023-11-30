@@ -57,6 +57,12 @@ func _process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			mouseIsHidden = true
 	
+	if Input.is_action_just_pressed("DebugSlow"):
+		if Engine.time_scale == 0.05:
+			Engine.time_scale = 1
+		else:
+			Engine.time_scale = 0.05
+	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 	

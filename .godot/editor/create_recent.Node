@@ -1,7 +1,10 @@
+Node3D
+ConeTwistJoint3D
+BoneAttachment3D
+SkeletonIK3D
 AnimationTree
 AnimationPlayer
 Node
-Node3D
 MeshInstance3D
 Sprite3D
 RayCast3D

@@ -7,7 +7,6 @@ var current_state : State
 var previous_state : State
 var states : Dictionary = {}
 
-@export var AnimTree: AnimationTree
 @export var animPlayer : AnimationPlayer
 
 var currState # For any weapons, enemy attacks, and the like that are context-sensitive in terms of state.

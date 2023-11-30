@@ -27,885 +27,1358 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.60975, 0)
 environment = SubResource("Environment_j4wp4")
 
 [node name="Player" parent="." instance=ExtResource("1_vgyq2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 46.0555, -30.6498)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="Pedestal" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Dingus route" type="Node3D" parent="."]
 
-[node name="Pedestal19" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+
+[node name="Pedestal19" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.7846, 44.08, -31.3499)
 
-[node name="Ramp" parent="." instance=ExtResource("3_my3vf")]
+[node name="Ramp" parent="Dingus route" instance=ExtResource("3_my3vf")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, 6, 0, 0)
 
-[node name="Pedestal2" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal2" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 12, -4, 0)
 
-[node name="Pedestal3" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal3" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 12, -8, -12)
 
-[node name="Pedestal4" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal4" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 12, -8, -16)
 
-[node name="Pedestal6" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal6" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 16, 12, -98)
 
-[node name="Pedestal7" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal7" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 8, 12, -98)
 
-[node name="Pedestal5" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal5" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-8.74228e-07, 0, 20, 0, 20, 0, -20, 0, -8.74228e-07, 12, 0, -90)
 
-[node name="Pedestal8" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal8" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-6.99382e-07, 0, 16, 0, 16, 0, -16, 0, -6.99382e-07, -27, 2, -200)
 
-[node name="Pedestal11" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal11" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-6.99382e-07, 0, 16, 0, 16, 0, -16, 0, -6.99382e-07, 33, 32.8, -200)
 
-[node name="Pedestal9" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal9" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-6.99382e-07, 0, 16, 0, 16, 0, -16, 0, -6.99382e-07, -43, 2, -200)
 
-[node name="Pedestal10" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal10" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-6.99382e-07, 0, 16, 0, 16, 0, -16, 0, -6.99382e-07, -59, 2, -200)
 
-[node name="Ramp2" parent="." instance=ExtResource("3_my3vf")]
+[node name="Ramp2" parent="Dingus route" instance=ExtResource("3_my3vf")]
 transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 12, -4, -6)
 
-[node name="Ramp3" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp3" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(-1, 0, -3.25842e-07, 0, 1, 0, 3.25842e-07, 0, -1, 12, -4, -20)
 
-[node name="Platform" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.91069e-15, 12, 13.5, -99)
 
-[node name="Platform2" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform2" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 9.86928, -102)
 
-[node name="Platform3" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform3" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 9.86928, -106)
 
-[node name="Platform4" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform4" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 9.86928, -110)
 
-[node name="Platform5" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform5" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 9.86928, -131)
 
-[node name="Platform6" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform6" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 9.86928, -135)
 
-[node name="Platform7" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform7" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 9.86928, -139)
 
-[node name="Platform27" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform27" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35, 34, -206)
 
-[node name="Platform28" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform28" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35, 34, -202)
 
-[node name="Platform29" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform29" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35, 34, -198)
 
-[node name="Platform30" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform30" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35, 34, -194)
 
-[node name="Platform33" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform33" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31, 34, -206)
 
-[node name="Platform34" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform34" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31, 34, -202)
 
-[node name="Platform35" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform35" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31, 34, -198)
 
-[node name="Platform36" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform36" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31, 34, -194)
 
-[node name="Platform37" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform37" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27, 34, -206)
 
-[node name="Platform38" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform38" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27, 34, -202)
 
-[node name="Platform39" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform39" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27, 34, -198)
 
-[node name="Platform40" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform40" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27, 34, -194)
 
-[node name="Platform41" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform41" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23, 34, -206)
 
-[node name="Platform42" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform42" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23, 34, -202)
 
-[node name="Platform43" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform43" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23, 34, -198)
 
-[node name="Platform44" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform44" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23, 34, -194)
 
-[node name="Platform45" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform45" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 34, -206)
 
-[node name="Platform46" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform46" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 34, -202)
 
-[node name="Platform47" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform47" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 34, -198)
 
-[node name="Platform48" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform48" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 34, -194)
 
-[node name="Platform49" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform49" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 34, -206)
 
-[node name="Platform50" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform50" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 34, -202)
 
-[node name="Platform51" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform51" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 34, -198)
 
-[node name="Platform52" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform52" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 34, -194)
 
-[node name="Platform53" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform53" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 23, -206)
 
-[node name="Platform54" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform54" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 23, -202)
 
-[node name="Platform55" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform55" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 23, -198)
 
-[node name="Platform56" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform56" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 23, -194)
 
-[node name="Platform205" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform205" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 23, -206)
 
-[node name="Platform206" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform206" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 23, -202)
 
-[node name="Platform207" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform207" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 23, -198)
 
-[node name="Platform208" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform208" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 23, -194)
 
-[node name="Platform209" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform209" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 23, -206)
 
-[node name="Platform210" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform210" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 23, -202)
 
-[node name="Platform211" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform211" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 23, -198)
 
-[node name="Platform212" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform212" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 23, -194)
 
-[node name="Platform57" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform57" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23, 23, -206)
 
-[node name="Platform58" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform58" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23, 23, -202)
 
-[node name="Platform59" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform59" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23, 23, -198)
 
-[node name="Platform60" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform60" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23, 23, -194)
 
-[node name="Platform61" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform61" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 23, -206)
 
-[node name="Platform62" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform62" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 23, -202)
 
-[node name="Platform63" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform63" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 23, -198)
 
-[node name="Platform64" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform64" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 23, -194)
 
-[node name="Platform65" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform65" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31, 23, -206)
 
-[node name="Platform66" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform66" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31, 23, -202)
 
-[node name="Platform67" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform67" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31, 23, -198)
 
-[node name="Platform68" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform68" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31, 23, -194)
 
-[node name="Platform69" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform69" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 23, -206)
 
-[node name="Platform70" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform70" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 23, -202)
 
-[node name="Platform71" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform71" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 23, -198)
 
-[node name="Platform72" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform72" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 23, -194)
 
-[node name="Platform73" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform73" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 39, 23, -206)
 
-[node name="Platform74" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform74" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 39, 23, -202)
 
-[node name="Platform75" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform75" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 39, 23, -198)
 
-[node name="Platform76" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform76" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 39, 23, -194)
 
-[node name="Pedestal12" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal12" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-6.99382e-07, 0, 16, 0, 16, 0, -16, 0, -6.99382e-07, 49, 32.8, -200)
 
-[node name="Platform77" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform77" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 43, 23, -206)
 
-[node name="Platform78" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform78" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 43, 23, -202)
 
-[node name="Platform79" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform79" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 43, 23, -198)
 
-[node name="Platform80" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform80" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 43, 23, -194)
 
-[node name="Platform81" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform81" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47, 23, -206)
 
-[node name="Platform82" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform82" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47, 23, -202)
 
-[node name="Platform83" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform83" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47, 23, -198)
 
-[node name="Platform84" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform84" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47, 23, -194)
 
-[node name="Platform85" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform85" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51, 23, -206)
 
-[node name="Platform86" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform86" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51, 23, -202)
 
-[node name="Platform87" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform87" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51, 23, -198)
 
-[node name="Platform88" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform88" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51, 23, -194)
 
-[node name="Platform89" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform89" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55, 23, -206)
 
-[node name="Platform90" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform90" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55, 23, -202)
 
-[node name="Platform91" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform91" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55, 23, -198)
 
-[node name="Platform92" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform92" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55, 23, -194)
 
-[node name="Platform93" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform93" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59, 23, -206)
 
-[node name="Platform94" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform94" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59, 23, -202)
 
-[node name="Platform95" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform95" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59, 23, -198)
 
-[node name="Platform96" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform96" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59, 23, -194)
 
-[node name="Platform97" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform97" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 63, 23, -206)
 
-[node name="Platform98" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform98" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 63, 23, -202)
 
-[node name="Platform99" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform99" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 63, 23, -198)
 
-[node name="Platform100" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform100" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 63, 23, -194)
 
-[node name="Platform101" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform101" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 67, 23, -206)
 
-[node name="Platform102" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform102" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 67, 23, -202)
 
-[node name="Platform103" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform103" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 67, 23, -198)
 
-[node name="Platform104" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform104" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 67, 23, -194)
 
-[node name="Platform105" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform105" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 71, 23, -206)
 
-[node name="Platform106" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform106" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 71, 23, -202)
 
-[node name="Platform107" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform107" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 71, 23, -198)
 
-[node name="Platform108" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform108" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 71, 23, -194)
 
-[node name="Pedestal13" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal13" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-16, 0, -1.39876e-06, 0, 16, 0, 1.39876e-06, 0, -16, 64.98, 32.8, -216.02)
 
-[node name="Platform109" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform109" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -210.02)
 
-[node name="Platform110" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform110" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -210.02)
 
-[node name="Platform111" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform111" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -210.02)
 
-[node name="Platform112" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform112" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -210.02)
 
-[node name="Platform113" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform113" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -214.02)
 
-[node name="Platform114" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform114" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -214.02)
 
-[node name="Platform115" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform115" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -214.02)
 
-[node name="Platform116" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform116" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -214.02)
 
-[node name="Platform117" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform117" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -218.02)
 
-[node name="Platform118" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform118" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -218.02)
 
-[node name="Platform119" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform119" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -218.02)
 
-[node name="Platform120" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform120" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -218.02)
 
-[node name="Platform121" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform121" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -222.02)
 
-[node name="Platform122" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform122" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -222.02)
 
-[node name="Platform123" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform123" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -222.02)
 
-[node name="Platform124" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform124" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -222.02)
 
-[node name="Pedestal14" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal14" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-16, 0, -1.39876e-06, 0, 16, 0, 1.39876e-06, 0, -16, 64.98, 32.8, -232.02)
 
-[node name="Platform125" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform125" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -226.02)
 
-[node name="Platform126" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform126" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -226.02)
 
-[node name="Platform127" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform127" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -226.02)
 
-[node name="Platform128" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform128" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -226.02)
 
-[node name="Platform129" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform129" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -230.02)
 
-[node name="Platform130" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform130" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -230.02)
 
-[node name="Platform131" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform131" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -230.02)
 
-[node name="Platform132" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform132" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -230.02)
 
-[node name="Platform133" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform133" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -234.02)
 
-[node name="Platform134" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform134" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -234.02)
 
-[node name="Platform135" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform135" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -234.02)
 
-[node name="Platform136" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform136" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -234.02)
 
-[node name="Platform137" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform137" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -238.02)
 
-[node name="Platform138" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform138" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -238.02)
 
-[node name="Platform139" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform139" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -238.02)
 
-[node name="Platform140" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform140" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -238.02)
 
-[node name="Platform141" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform141" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -242.02)
 
-[node name="Platform142" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform142" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -242.02)
 
-[node name="Platform143" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform143" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -242.02)
 
-[node name="Platform144" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform144" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -242.02)
 
-[node name="Platform145" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform145" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -246.02)
 
-[node name="Platform146" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform146" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -246.02)
 
-[node name="Platform147" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform147" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -246.02)
 
-[node name="Platform148" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform148" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -246.02)
 
-[node name="Platform149" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform149" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -250.02)
 
-[node name="Platform150" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform150" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -250.02)
 
-[node name="Platform151" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform151" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -250.02)
 
-[node name="Platform152" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform152" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -250.02)
 
-[node name="Platform153" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform153" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.98, 23, -254.02)
 
-[node name="Platform154" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform154" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.98, 23, -254.02)
 
-[node name="Platform155" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform155" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.98, 23, -254.02)
 
-[node name="Platform156" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform156" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.98, 23, -254.02)
 
-[node name="Pedestal15" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal15" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(2.09815e-06, 0, -16, 0, 16, 0, 16, 0, 2.09815e-06, 49.0598, 32.8, -248)
 
-[node name="Platform157" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform157" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.0598, 23, -242)
 
-[node name="Platform158" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform158" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.0598, 23, -246)
 
-[node name="Platform159" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform159" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.0598, 23, -250)
 
-[node name="Platform160" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform160" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.0598, 23, -254)
 
-[node name="Platform161" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform161" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 51.0598, 23, -242)
 
-[node name="Platform162" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform162" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 51.0598, 23, -246)
 
-[node name="Platform163" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform163" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 51.0598, 23, -250)
 
-[node name="Platform164" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform164" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 51.0598, 23, -254)
 
-[node name="Platform165" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform165" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.0598, 23, -242)
 
-[node name="Platform166" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform166" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.0598, 23, -246)
 
-[node name="Platform167" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform167" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.0598, 23, -250)
 
-[node name="Platform168" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform168" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.0598, 23, -254)
 
-[node name="Platform169" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform169" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.0598, 23, -242)
 
-[node name="Platform170" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform170" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.0598, 23, -246)
 
-[node name="Platform171" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform171" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.0598, 23, -250)
 
-[node name="Platform172" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform172" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.0598, 23, -254)
 
-[node name="Pedestal16" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal16" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(2.09815e-06, 0, -16, 0, 16, 0, 16, 0, 2.09815e-06, 33.0598, 32.8, -248)
 
-[node name="Pedestal17" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal17" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(4.52987e-06, 0, -60, 0, 60, 0, 60, 0, 4.52987e-06, -52.9402, 53, -248)
 
-[node name="Pedestal18" parent="." instance=ExtResource("2_mjfnn")]
+[node name="Pedestal18" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(4.52987e-06, 0, -60, 0, 60, 0, 60, 0, 4.52987e-06, -215.94, 78, -248)
 
-[node name="Platform173" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform173" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.0598, 23, -242)
 
-[node name="Platform174" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform174" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.0598, 23, -246)
 
-[node name="Platform175" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform175" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.0598, 23, -250)
 
-[node name="Platform176" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform176" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.0598, 23, -254)
 
-[node name="Platform177" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform177" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.0598, 23, -242)
 
-[node name="Platform178" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform178" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.0598, 23, -246)
 
-[node name="Platform179" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform179" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.0598, 23, -250)
 
-[node name="Platform180" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform180" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.0598, 23, -254)
 
-[node name="Platform181" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform181" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.0598, 23, -242)
 
-[node name="Platform182" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform182" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.0598, 23, -246)
 
-[node name="Platform183" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform183" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.0598, 23, -250)
 
-[node name="Platform184" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform184" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.0598, 23, -254)
 
-[node name="Platform185" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform185" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.0598, 23, -242)
 
-[node name="Platform186" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform186" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.0598, 23, -246)
 
-[node name="Platform187" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform187" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.0598, 23, -250)
 
-[node name="Platform188" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform188" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.0598, 23, -254)
 
-[node name="Platform189" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform189" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.0598, 23, -242)
 
-[node name="Platform190" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform190" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.0598, 23, -246)
 
-[node name="Platform191" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform191" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.0598, 23, -250)
 
-[node name="Platform192" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform192" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.0598, 23, -254)
 
-[node name="Platform193" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform193" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.0598, 23, -242)
 
-[node name="Platform194" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform194" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.0598, 23, -246)
 
-[node name="Platform195" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform195" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.0598, 23, -250)
 
-[node name="Platform196" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform196" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.0598, 23, -254)
 
-[node name="Platform197" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform197" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.0598, 23, -242)
 
-[node name="Platform198" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform198" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.0598, 23, -246)
 
-[node name="Platform199" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform199" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.0598, 23, -250)
 
-[node name="Platform200" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform200" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.0598, 23, -254)
 
-[node name="Platform201" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform201" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.0598, 23, -242)
 
-[node name="Platform202" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform202" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.0598, 23, -246)
 
-[node name="Platform203" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform203" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.0598, 23, -250)
 
-[node name="Platform204" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform204" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.0598, 23, -254)
 
-[node name="Platform213" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform213" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.9402, 23, -242)
 
-[node name="Platform214" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform214" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.9402, 23, -246)
 
-[node name="Platform215" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform215" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.9402, 23, -250)
 
-[node name="Platform216" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform216" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.9402, 23, -254)
 
-[node name="Platform217" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform217" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.9402, 23, -242)
 
-[node name="Platform218" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform218" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.9402, 23, -246)
 
-[node name="Platform219" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform219" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.9402, 23, -250)
 
-[node name="Platform220" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform220" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.9402, 23, -254)
 
-[node name="Platform229" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform229" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.940203, 23, -242)
 
-[node name="Platform230" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform230" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.940203, 23, -246)
 
-[node name="Platform231" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform231" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.940203, 23, -250)
 
-[node name="Platform232" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform232" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.940203, 23, -254)
 
-[node name="Platform233" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform233" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.9402, 23, -242)
 
-[node name="Platform234" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform234" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.9402, 23, -246)
 
-[node name="Platform235" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform235" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.9402, 23, -250)
 
-[node name="Platform236" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform236" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.9402, 23, -254)
 
-[node name="Platform237" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform237" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.0598, 23, -242)
 
-[node name="Platform238" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform238" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.0598, 23, -246)
 
-[node name="Platform239" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform239" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.0598, 23, -250)
 
-[node name="Platform240" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform240" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.0598, 23, -254)
 
-[node name="Platform241" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform241" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.0598, 23, -242)
 
-[node name="Platform242" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform242" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.0598, 23, -246)
 
-[node name="Platform243" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform243" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.0598, 23, -250)
 
-[node name="Platform244" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform244" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.0598, 23, -254)
 
-[node name="Platform221" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform221" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.9402, 23, -242)
 
-[node name="Platform222" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform222" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.9402, 23, -246)
 
-[node name="Platform223" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform223" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.9402, 23, -250)
 
-[node name="Platform224" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform224" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.9402, 23, -254)
 
-[node name="Platform225" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform225" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.9402, 23, -242)
 
-[node name="Platform226" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform226" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.9402, 23, -246)
 
-[node name="Platform227" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform227" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.9402, 23, -250)
 
-[node name="Platform228" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform228" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.9402, 23, -254)
 
-[node name="Platform8" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform8" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -4.37114e-08, 2, 11.8693, -146)
 
-[node name="Platform9" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform9" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -4.37114e-08, 2, 11.8693, -150)
 
-[node name="Platform10" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform10" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -4.37114e-08, 2, 11.8693, -154)
 
-[node name="Platform11" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform11" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -4.37114e-08, 2, 11.8693, -158)
 
-[node name="Platform12" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform12" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(1.91069e-15, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -4.37114e-08, 2, 11.8693, -162)
 
-[node name="Platform13" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform13" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-8.74228e-08, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -1, 8.74228e-08, 4.37114e-08, 8, 11.8693, -193)
 
-[node name="Platform18" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform18" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-0.258819, -0.965926, -3.09086e-08, 4.37114e-08, -4.37114e-08, 1, -0.965926, 0.258819, 5.35353e-08, 7.5, 11.8693, -196.9)
 
-[node name="Platform19" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform19" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-0.5, -0.866025, -1.59995e-08, 4.37114e-08, -4.37114e-08, 1, -0.866025, 0.5, 5.97109e-08, 6, 11.8693, -200.5)
 
-[node name="Platform20" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform20" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-0.707107, -0.707107, 1.06581e-14, 4.37114e-08, -4.37114e-08, 1, -0.707107, 0.707107, 6.18172e-08, 3.7, 11.8693, -203.5)
 
-[node name="Platform21" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform21" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-0.866025, -0.5, 1.59995e-08, 4.37114e-08, -4.37114e-08, 1, -0.5, 0.866025, 5.97109e-08, 0.699999, 11.8693, -205.8)
 
-[node name="Platform22" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform22" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-0.965926, -0.258819, 3.09086e-08, 4.37114e-08, -4.37114e-08, 1, -0.258819, 0.965926, 5.35353e-08, -2.9, 11.8693, -207.3)
 
-[node name="Platform23" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform23" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-1, 1.78814e-07, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.78814e-07, 1, 4.37114e-08, -6.8, 11.8693, -207.8)
 
-[node name="Platform24" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform24" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-1, 1.78814e-07, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.78814e-07, 1, 4.37114e-08, -10.8, 11.8693, -207.8)
 
-[node name="Platform25" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform25" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-1, 1.78814e-07, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.78814e-07, 1, 4.37114e-08, -14.8, 11.8693, -207.8)
 
-[node name="Platform26" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform26" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-1, 1.78814e-07, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.78814e-07, 1, 4.37114e-08, -18.8, 11.8693, -207.8)
 
-[node name="Platform31" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform31" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(7.78829e-07, 4, 1.74846e-07, 0, -1.74846e-07, 4, 4, -7.78829e-07, -3.40437e-14, -75, 24, -200)
 
-[node name="Platform32" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform32" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(7.78829e-07, 4, 1.74846e-07, 0, -1.74846e-07, 4, 4, -7.78829e-07, -3.40437e-14, -75, 40, -200)
 
-[node name="Platform14" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform14" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-8.74228e-08, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -1, 8.74228e-08, 4.37114e-08, 8, 11.8693, -189)
 
-[node name="Platform15" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform15" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-8.74228e-08, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -1, 8.74228e-08, 4.37114e-08, 8, 11.8693, -185)
 
-[node name="Platform16" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform16" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-8.74228e-08, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -1, 8.74228e-08, 4.37114e-08, 8, 11.8693, -181)
 
-[node name="Platform17" parent="." instance=ExtResource("5_l64gg")]
+[node name="Platform17" parent="Dingus route" instance=ExtResource("5_l64gg")]
 transform = Transform3D(-8.74228e-08, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -1, 8.74228e-08, 4.37114e-08, 8, 11.8693, -177)
 
-[node name="Ramp4" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp4" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(3.89414e-07, 0, -2, 0, 2, 0, 2, 0, 3.89414e-07, -71, 14, -204)
 
-[node name="Ramp5" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp5" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(3.89414e-07, 0, -2, 0, 2, 0, 2, 0, 3.89414e-07, -71, 14, -196)
 
-[node name="Ramp6" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp6" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(3.89414e-07, 0, -2, 0, 2, 0, 2, 0, 3.89414e-07, -49, 46.1, -204)
 
-[node name="Ramp7" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp7" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(3.89414e-07, 0, -2, 0, 2, 0, 2, 0, 3.89414e-07, -49, 46.1, -196)
 
-[node name="Ramp8" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp8" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(3.89414e-07, 0, -2, 0, 2, 0, 2, 0, 3.89414e-07, -41, 38.1, -204)
 
-[node name="Ramp9" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp9" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(3.89414e-07, 0, -2, 0, 2, 0, 2, 0, 3.89414e-07, -41, 38.1, -196)
 
-[node name="Ramp10" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp10" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -276)
 
-[node name="Ramp11" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp11" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -272)
 
-[node name="Ramp12" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp12" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -268)
 
-[node name="Ramp13" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp13" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -264)
 
-[node name="Ramp14" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp14" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -260)
 
-[node name="Ramp15" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp15" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -256)
 
-[node name="Ramp16" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp16" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -252)
 
-[node name="Ramp17" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp17" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -248)
 
-[node name="Ramp18" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp18" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -244)
 
-[node name="Ramp19" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp19" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -240)
 
-[node name="Ramp20" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp20" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -236)
 
-[node name="Ramp21" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp21" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -232)
 
-[node name="Ramp22" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp22" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -228)
 
-[node name="Ramp23" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp23" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -224)
 
-[node name="Ramp24" parent="." instance=ExtResource("4_nsqyd")]
+[node name="Ramp24" parent="Dingus route" instance=ExtResource("4_nsqyd")]
 transform = Transform3D(1.94708e-07, 0, -1, 0, 1, 0, 1, 0, 1.94708e-07, -81, 85, -220)
 
-[node name="GrappleBall" parent="." instance=ExtResource("6_dsfwb")]
+[node name="GrappleBall" parent="Dingus route" instance=ExtResource("6_dsfwb")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3, 13.6097, -53)
 
-[node name="GrappleBall2" parent="." instance=ExtResource("6_dsfwb")]
+[node name="GrappleBall2" parent="Dingus route" instance=ExtResource("6_dsfwb")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -25.179, 51.0965, -88.7592)
 
-[node name="GrappleBall3" parent="." instance=ExtResource("6_dsfwb")]
+[node name="GrappleBall3" parent="Dingus route" instance=ExtResource("6_dsfwb")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 51.0965, -135.895)
 
-[node name="GrappleBall4" parent="." instance=ExtResource("6_dsfwb")]
+[node name="GrappleBall4" parent="Dingus route" instance=ExtResource("6_dsfwb")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 92.388, -184.067)
 
-[node name="GrappleBall5" parent="." instance=ExtResource("6_dsfwb")]
+[node name="GrappleBall5" parent="Dingus route" instance=ExtResource("6_dsfwb")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 126.15, -138.743)
 
-[node name="GrappleBall6" parent="." instance=ExtResource("6_dsfwb")]
+[node name="GrappleBall6" parent="Dingus route" instance=ExtResource("6_dsfwb")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 126.15, -53.9277)
 
-[node name="GrappleBall7" parent="." instance=ExtResource("6_dsfwb")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.6626, 72.6788, 117.129)
+[node name="FunnyRoute" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -3.25842e-07, 0, 1, 0, 3.25842e-07, 0, -1, 0, 0, 6)
+
+[node name="Pedestal20" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(1.50206e-05, 0, 60, 0, 60, 0, -60, 0, 1.50206e-05, 273.94, 297, 86.0001)
+
+[node name="Pedestal" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 2.93258e-06, -14, -39)
+
+[node name="Pedestal67" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4.43464e-06, 4, -5.69719e-14, -5.24537e-07, -1.13687e-13, -4, -12, 1.47821e-06, 1.74845e-07, 2.82139e-06, -18, -35)
+
+[node name="Pedestal2" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 4.23594e-06, -14, -43)
+
+[node name="Pedestal3" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 5.53931e-06, -14, -47)
+
+[node name="Pedestal4" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 6.84268e-06, -14, -51)
+
+[node name="Pedestal5" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 8.14605e-06, -14, -55)
+
+[node name="Pedestal6" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 8.14605e-06, -18, -55)
+
+[node name="Pedestal7" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 8.14605e-06, -22, -55)
+
+[node name="Pedestal8" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 9.44941e-06, -22, -59)
+
+[node name="Pedestal9" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.07528e-05, -22, -63)
+
+[node name="Pedestal10" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.20562e-05, -22, -67)
+
+[node name="Pedestal11" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.33595e-05, -22, -71)
+
+[node name="Pedestal12" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.46629e-05, -22, -75)
+
+[node name="Pedestal14" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.59663e-05, -22, -79)
+
+[node name="Pedestal17" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.72696e-05, -22, -83)
+
+[node name="Pedestal18" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.8573e-05, -22, -87)
+
+[node name="Pedestal63" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(5.24537e-07, 4, 1.30337e-06, 12, -1.74846e-07, 1.13687e-13, 1.70916e-13, 1.30337e-06, -4, 4.00002, -14, -103)
+
+[node name="Pedestal64" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 4.00002, -6, -103)
+
+[node name="Pedestal65" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(5.24537e-07, 4, 1.30337e-06, 12, -1.74846e-07, 1.13687e-13, 1.70916e-13, 1.30337e-06, -4, -3.99997, -14, -103)
+
+[node name="Pedestal66" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, -3.99998, -6, -103)
+
+[node name="Pedestal13" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.46629e-05, -17, -75)
+
+[node name="Pedestal15" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.46629e-05, -13, -75)
+
+[node name="Pedestal16" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-4, 0, 1.30337e-06, 0, 4, 0, -1.30337e-06, 0, -4, 1.46629e-05, -9, -75)
+
+[node name="Pedestal23" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-40, 2.27374e-13, 1.55766e-05, 0, 40, 0, -1.55766e-05, 7.40878e-20, -40, 293, -33, 677)
+
+[node name="Pedestal25" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-40, 2.27374e-13, 1.55766e-05, 0, 40, 0, -1.55766e-05, 7.40878e-20, -40, 293, 7, 677)
+
+[node name="Pedestal26" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-40, 5.62888e-27, 3.89414e-06, 0, 40, -3.61369e-21, -1.55766e-05, -1.44547e-20, -10, 293, 47, 692)
+
+[node name="Pedestal24" parent="FunnyRoute" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-40, 2.27374e-13, 1.55766e-05, 0, 40, 0, -1.55766e-05, 7.40878e-20, -40, 293, -73, 677)
+
+[node name="Ramp2" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 3.25842e-07, -4, -6)
+
+[node name="Ramp3" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 1.62921e-06, -8, -10)
+
+[node name="Ramp7" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 283, -49, -134)
+
+[node name="Ramp9" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 303, -49, -134)
+
+[node name="Ramp10" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 283, -69, -114)
+
+[node name="Ramp11" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 303, -69, -114)
+
+[node name="Ramp12" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 283, -89, -93.9999)
+
+[node name="Ramp13" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 303, -89, -93.9999)
+
+[node name="Ramp20" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(10, 0, 1.78814e-06, 0, 10, 0, -2.38419e-06, 0, 7.5, 293, 47, 672)
+
+[node name="Ramp21" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(10, 0, 1.78814e-06, 0, 10, 0, -2.38419e-06, 0, 7.5, 293, 7, 642)
+
+[node name="Ramp22" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(10, 0, 2.38419e-06, 0, 10, 0, -2.38419e-06, 0, 10, 293, -33, 607)
+
+[node name="Ramp14" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 283, -109, 150)
+
+[node name="Ramp15" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 303, -109, 150)
+
+[node name="Ramp16" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 283, -129, 170)
+
+[node name="Ramp17" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 303, -129, 170)
+
+[node name="Ramp18" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 283, -149, 190)
+
+[node name="Ramp19" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 303, -149, 190)
+
+[node name="Ramp5" parent="FunnyRoute" instance=ExtResource("4_nsqyd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.06291e-05, -14, -99)
+
+[node name="Ramp" parent="FunnyRoute" instance=ExtResource("3_my3vf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Ramp8" parent="FunnyRoute" instance=ExtResource("3_my3vf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.07528e-05, -14, -33)
+
+[node name="Ramp4" parent="FunnyRoute" instance=ExtResource("3_my3vf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.03033e-05, -18, -93)
+
+[node name="Ramp6" parent="FunnyRoute" instance=ExtResource("3_my3vf")]
+transform = Transform3D(1, -2.38419e-07, 4.13265e-07, 4.13265e-07, -4.37114e-08, -1, 2.38419e-07, 1, -4.37113e-08, 3.35617e-05, -8, -103)
+
+[node name="GrappleBall" parent="FunnyRoute" instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.25838e-07, 51, -117)
+
+[node name="GrappleBall2" parent="FunnyRoute" instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 137, 91.999, -39)
+
+[node name="GrappleBall3" parent="FunnyRoute" instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 221, 87.999, -111)
+
+[node name="GrappleBall4" parent="FunnyRoute" instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 298, 12.999, -297.37)
+
+[node name="GrappleBall5" parent="FunnyRoute" instance=ExtResource("6_dsfwb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 291.669, -101.001, 385.63)
+
+[node name="GrappleBall6" parent="FunnyRoute" instance=ExtResource("6_dsfwb")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 291.669, -93.001, 688.63)
+
+[node name="GrappleBall7" parent="FunnyRoute" instance=ExtResource("6_dsfwb")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 291.669, 276.999, 696.63)
+
+[node name="GrappleBall8" parent="FunnyRoute" instance=ExtResource("6_dsfwb")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 291.669, 15.999, 50.6299)
+
+[node name="Platform" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 3.48651e-05, 51, -107)
+
+[node name="Platform2" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 2.83482e-05, 51, -87)
+
+[node name="Platform3" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 2.18314e-05, 51, -67)
+
+[node name="Platform4" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 1.53146e-05, 51, -47)
+
+[node name="Platform5" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 20, 51, -47)
+
+[node name="Platform6" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 40, 51, -47)
+
+[node name="Platform12" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, 63, -167)
+
+[node name="Platform13" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, 63, -187)
+
+[node name="Platform14" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, 63, -207)
+
+[node name="Platform18" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, 63, -167)
+
+[node name="Platform19" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, 63, -187)
+
+[node name="Platform20" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, 63, -207)
+
+[node name="Platform15" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -39.5, -214)
+
+[node name="Platform16" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -39.5, -234)
+
+[node name="Platform17" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -39.5, -254)
+
+[node name="Platform21" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -39.5, -214)
+
+[node name="Platform22" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -39.5, -234)
+
+[node name="Platform23" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -39.5, -254)
+
+[node name="Platform24" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -39.5, -154)
+
+[node name="Platform25" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -39.5, -174)
+
+[node name="Platform26" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -39.5, -194)
+
+[node name="Platform27" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -39.5, -154)
+
+[node name="Platform44" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(1.41065e-06, 1.62921e-06, -5, 5, 6.55671e-07, 1.41065e-06, 6.55671e-07, -5, -1.62921e-06, 283, -27.7873, -143)
+
+[node name="Platform45" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(1.41065e-06, 1.62921e-06, -5, 5, 6.55671e-07, 1.41065e-06, 6.55671e-07, -5, -1.62921e-06, 303, -27.7873, -143)
+
+[node name="Platform30" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(2.58627e-07, 1.15202e-06, -5, 3.53553, 3.53553, 9.97481e-07, 3.53553, -3.53553, -6.31727e-07, 303, -49.5, -116)
+
+[node name="Platform31" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(2.58627e-07, 1.15202e-06, -5, 3.53553, 3.53553, 9.97481e-07, 3.53553, -3.53553, -6.31727e-07, 283, -49.5, -116)
+
+[node name="Platform46" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(1.41065e-06, 1.62921e-06, -5, 5, 6.55671e-07, 1.41065e-06, 6.55671e-07, -5, -1.62921e-06, 283, -87.2983, 141.06)
+
+[node name="Platform47" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(1.41065e-06, 1.62921e-06, -5, 5, 6.55671e-07, 1.41065e-06, 6.55671e-07, -5, -1.62921e-06, 303, -87.2983, 141.06)
+
+[node name="Platform48" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(2.58627e-07, 1.15202e-06, -5, 3.53553, 3.53553, 9.97481e-07, 3.53553, -3.53553, -6.31727e-07, 303, -109.011, 168.06)
+
+[node name="Platform49" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(2.58627e-07, 1.15202e-06, -5, 3.53553, 3.53553, 9.97481e-07, 3.53553, -3.53553, -6.31727e-07, 283, -109.011, 168.06)
+
+[node name="Platform28" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -39.5, -174)
+
+[node name="Platform29" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -39.5, -194)
+
+[node name="Platform32" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -99.5, 70.0001)
+
+[node name="Platform33" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -99.5, 50.0001)
+
+[node name="Platform34" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -99.5, 30.0001)
+
+[node name="Platform35" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -99.5, 70.0001)
+
+[node name="Platform36" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -99.5, 50.0001)
+
+[node name="Platform37" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -99.5, 30.0001)
+
+[node name="Platform38" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -99.5, 130)
+
+[node name="Platform39" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -99.5, 110)
+
+[node name="Platform40" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -99.5, 90.0001)
+
+[node name="Platform41" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -99.5, 130)
+
+[node name="Platform42" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -99.5, 110)
+
+[node name="Platform43" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -99.5, 90.0001)
+
+[node name="Platform50" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -130.5, 597)
+
+[node name="Platform51" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -130.5, 577)
+
+[node name="Platform52" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -130.5, 557)
+
+[node name="Platform53" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -130.5, 597)
+
+[node name="Platform54" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -130.5, 577)
+
+[node name="Platform55" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -130.5, 557)
+
+[node name="Platform56" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -130.5, 637)
+
+[node name="Platform57" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -130.5, 617)
+
+[node name="Platform58" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -130.5, 637)
+
+[node name="Platform59" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -130.5, 617)
+
+[node name="Platform60" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 537)
+
+[node name="Platform61" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 517)
+
+[node name="Platform62" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 497)
+
+[node name="Platform63" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 537)
+
+[node name="Platform64" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 517)
+
+[node name="Platform65" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 497)
+
+[node name="Platform66" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 577)
+
+[node name="Platform67" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 557)
+
+[node name="Platform68" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 577)
+
+[node name="Platform69" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 557)
+
+[node name="Platform70" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 437)
+
+[node name="Platform71" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 417)
+
+[node name="Platform72" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 397)
+
+[node name="Platform73" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 437)
+
+[node name="Platform74" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 417)
+
+[node name="Platform75" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 397)
+
+[node name="Platform76" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 477)
+
+[node name="Platform77" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 457)
+
+[node name="Platform78" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 477)
+
+[node name="Platform79" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 457)
+
+[node name="Platform80" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 337)
+
+[node name="Platform81" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 317)
+
+[node name="Platform82" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 297)
+
+[node name="Platform83" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 337)
+
+[node name="Platform84" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 317)
+
+[node name="Platform85" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 297)
+
+[node name="Platform86" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 377)
+
+[node name="Platform87" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 357)
+
+[node name="Platform88" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 377)
+
+[node name="Platform89" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 357)
+
+[node name="Platform90" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 237)
+
+[node name="Platform91" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 217)
+
+[node name="Platform92" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 197)
+
+[node name="Platform93" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 237)
+
+[node name="Platform94" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 217)
+
+[node name="Platform95" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 197)
+
+[node name="Platform96" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 277)
+
+[node name="Platform97" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 283, -53.5, 257)
+
+[node name="Platform98" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 277)
+
+[node name="Platform99" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(3.03986e-06, 1.4243e-13, -5, 4.37114e-07, -5, -1.13687e-13, -5, -4.37114e-07, -3.03986e-06, 303, -53.5, 257)
+
+[node name="Platform7" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(1.41065e-06, -1.62921e-06, -5, -5, -2.18557e-07, -1.41065e-06, -2.18557e-07, 5, -1.62921e-06, 40, 61, -57)
+
+[node name="Platform8" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(1.41065e-06, -1.62921e-06, -5, -5, -2.18557e-07, -1.41065e-06, -2.18557e-07, 5, -1.62921e-06, 20, 61, -57)
+
+[node name="Platform9" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(2.18556e-07, -5, 1.84777e-06, -5, -2.18557e-07, -1.41065e-06, 1.41065e-06, -1.84777e-06, -5, 10, 61, -67)
+
+[node name="Platform10" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(2.18556e-07, -5, 1.84777e-06, -5, -2.18557e-07, -1.41065e-06, 1.41065e-06, -1.84777e-06, -5, 10, 61, -87)
+
+[node name="Platform11" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
+transform = Transform3D(2.18556e-07, -5, 1.84777e-06, -5, -2.18557e-07, -1.41065e-06, 1.41065e-06, -1.84777e-06, -5, 10, 61, -107)

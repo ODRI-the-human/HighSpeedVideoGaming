@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://us10rjtebnfb"
-path="res://.godot/imported/FirstPersonHands.glb-1527867f16719049889507ffe6799612.scn"
+uid="uid://bojgb1e7hatrg"
+path="res://.godot/imported/firstPersonHands.glb-7277cd8dd66f18e14a37372f8136dac2.scn"
 
 [deps]
 
-source_file="res://Player/FirstPersonHands.glb"
-dest_files=["res://.godot/imported/FirstPersonHands.glb-1527867f16719049889507ffe6799612.scn"]
+source_file="res://Player/firstPersonHands.glb"
+dest_files=["res://.godot/imported/firstPersonHands.glb-7277cd8dd66f18e14a37372f8136dac2.scn"]
 
 [params]
 
@@ -30,10 +30,10 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "animations": {
-"khopeshParry": {
+"grapThrow": {
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "res://Player/Anims/Khopesh/KhopeshParry.res",
+"save_to_file/path": "res://Player/Anims/Grap/grapThrow.res",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -1829,10 +1829,10 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": null
 },
-"khopeshSwing": {
+"grapYank": {
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "res://Player/Anims/Khopesh/KhopeshSwing.res",
+"save_to_file/path": "res://Player/Anims/Grap/grapYank.res",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
