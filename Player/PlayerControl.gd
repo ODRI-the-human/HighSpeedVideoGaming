@@ -30,7 +30,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	floor_max_angle = deg_to_rad(85)
+	floor_max_angle = deg_to_rad(89)
 	floor_snap_length = 2
 	currFloorNormal = get_floor_normal()
 
@@ -47,7 +47,7 @@ func _process(delta):
 		name = colObject.to_string()
 	
 	textLabel.text = "hey buckaroo 'last' velocity: " + str(lastVelocity.length()) + "\nlast velocity components:\n" + str(lastVelocity.x) + "\n" + str(lastVelocity.y) + "\n" + str(lastVelocity.z) + "\nlast real velocity: " + str(lastRealVelocity.length()) + "\nlast real velocity components:\n" + str(lastRealVelocity.x) + "\n" + str(lastRealVelocity.y) + "\n" + str(lastRealVelocity.z) + "\ncurrent state: " + str(stateMachine.current_state) + "\nprevious state: " + str(stateMachine.previous_state) + "\nfloor normal components:\n" + str(lastFloorNormal.x) + "\n" + str(lastFloorNormal.y) + "\n" + str(lastFloorNormal.z) + "\ncurrent state (number): " + str(stateMachine.currState) + "\ncurrent ray cast hit: " + name
-	speedState = clamp(floor(lastVelocity.length()/45), 0, 2)
+	speedState = clamp(floor(lastVelocity.length()/20), 0, 2)
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if mouseIsHidden:
@@ -66,7 +66,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 	
-	camera.fov = clamp(75 + 0.1 * velocity.length() * (1 - clamp(velocity.angle_to(-camera.get_global_transform().basis.z) / deg_to_rad(90), 0, 1)), 75, 100)
+	camera.fov = clamp(75 + 0.1 * get_real_velocity().length() * (1 - clamp(get_real_velocity().angle_to(-camera.get_global_transform().basis.z) / deg_to_rad(90), 0, 1)), 75, 100)
 
 func _physics_process(delta):
 	# Add the gravity.

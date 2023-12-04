@@ -7,7 +7,7 @@ var accelSpeed = 120
 
 func Enter():
 	playerObj.canAirPunch = true
-	maxSpeed = clamp(playerObj.lastVelocity.length(), 20, 9999)
+	maxSpeed = clamp(playerObj.lastVelocity.length(), 20, INF)
 	
 	#var angle = slopeVec.angle_to(Vector3(playerObj.lastVelocity.x, 0, playerObj.lastVelocity.z))
 	print("Entered run state, lastvelocity: ", playerObj.lastVelocity.length())
@@ -22,7 +22,7 @@ func Update(delta):
 	if playerObj.is_on_wall() && playerObj.get_floor_angle() > deg_to_rad(45): # The following is all for transitioning to the wall climb state.
 		playerObj.updateSpeed = false
 		print("fuck shit")
-		Transitioned.emit(self, "WallClimbState")
+		Transitioned.emit(self, "WallVertSlideState")
 		return
 	
 	CheckIfToBecomeAirborne()

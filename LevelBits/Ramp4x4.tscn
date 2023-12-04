@@ -7,6 +7,7 @@ left_to_right = 1.0
 
 [node name="Ramp" type="StaticBody3D"]
 transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 0, 0, 0)
+collision_layer = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 0, 0, 0)

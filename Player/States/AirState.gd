@@ -17,6 +17,7 @@ func Enter():
 	playerObj.gravityActive = true
 	playerObj.wasGrounded = false
 	playerObj.stateMachine.currState = PLAYERSTATES.AIR
+	print("position: ", playerObj.position)
 
 func Update(delta):
 	if Input.is_action_just_pressed("jump"):
@@ -45,20 +46,23 @@ func Update(delta):
 		canWallClimbOrRun = false
 		var wallNormalNoY = -Vector3(playerObj.get_wall_normal().x, 0 , playerObj.get_wall_normal().z)
 		var velocityNoY = Vector3(playerObj.lastVelocity.x, 0, playerObj.lastVelocity.z)
-		var angle = wallNormalNoY.angle_to(velocityNoY.normalized())
+		var angleHor = wallNormalNoY.angle_to(velocityNoY.normalized())
+		
+		#var rotAxisVec = Vector3(-wallNormalNoY.z, 0, wallNormalNoY.x).normalized()
+		var angleVer = min(playerObj.lastVelocity.angle_to(Vector3.UP), playerObj.lastVelocity.angle_to(Vector3.DOWN))
 		#var angle = Vector3(-playerObj.get_wall_normal().x, 0, -playerObj.get_wall_normal().z).normalized().angle_to(Vector3(playerObj.lastVelocity.x, 0, playerObj.lastVelocity.z).normalized())
 		#print("angle: ", angle)
-		print("normal: ", wallNormalNoY, " / normal mag: ", wallNormalNoY.length(), " / velocity: ", velocityNoY, " / velocity mag: ", velocityNoY.length(), " / angle: ", angle)
-		if angle > deg_to_rad(45):
+		print("air wall moment, angleHor: ", rad_to_deg(angleHor), " / angleVer: ", rad_to_deg(angleVer))
+		if angleHor > deg_to_rad(60) && angleVer > deg_to_rad(60) && playerObj.speedState > 0:
 			playerObj.updateSpeed = false
 			Transitioned.emit(self, "WallRunState")
 			return
-		elif playerObj.lastVelocity.y > 20:
+		else:
 			playerObj.updateSpeed = false
-			Transitioned.emit(self, "WallClimbState")
+			Transitioned.emit(self, "WallVertSlideState")
 			return
 	
-	if Input.is_action_pressed("slide"):
+	if Input.is_action_just_pressed("slide"):
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirDiveState")
 		return

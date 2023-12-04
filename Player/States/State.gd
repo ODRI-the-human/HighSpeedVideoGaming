@@ -26,7 +26,7 @@ func CameraShit():
 
 func CheckIfToBecomeAirborne(): #General stuff for checking if the player should become airborne when in grounded state
 	if !playerObj.is_on_floor() || (playerObj.get_floor_normal().y > playerObj.currFloorNormal.y + 0.2 && playerObj.get_floor_normal().y == 1):
-		print("television")
+		print("television, lastRealVelocity: ", playerObj.lastRealVelocity)
 		playerObj.velocity = playerObj.lastVelocity.length() * playerObj.lastRealVelocity.normalized()
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirState")
@@ -34,12 +34,14 @@ func CheckIfToBecomeAirborne(): #General stuff for checking if the player should
 func ActivateJump(normalBias): 
 	#   jumpFactor is mainly used by slide, to make the player jumo higher if needed.
 	playerObj.wasGrounded = false
-	print("jumping, floor normal: ", playerObj.lastFloorNormal)
 	playerObj.updateSpeed = false
 	var speed = playerObj.lastRealVelocity.length()
-	playerObj.lastRealVelocity.y = clamp(playerObj.lastRealVelocity.y, 0, 100000)
+	playerObj.lastRealVelocity.y = clamp(playerObj.lastRealVelocity.y, 0, INF)
+#
+#	playerObj.velocity = (1 - 0.8 * normalBias) * playerObj.lastRealVelocity.normalized() * speed + 5 * speed * (0.2 + 0.8 * normalBias) * playerObj.lastFloorNormal
+	playerObj.velocity = (1 - 0.8 * normalBias) * playerObj.lastRealVelocity + playerObj.lastFloorNormal * (5 + 0.8 * normalBias * playerObj.lastRealVelocity.length())
+	print("jumping, new vel: ", playerObj.velocity, " / normalBias: ", normalBias)
 	
-	playerObj.velocity = (1 - 0.8 * normalBias) * playerObj.lastRealVelocity + 5 * (1 + 0.2 * speed * normalBias) * playerObj.lastFloorNormal
 	Transitioned.emit(self, "AirState")
 
 func SetJumpLandingVelocity():

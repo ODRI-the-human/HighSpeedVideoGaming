@@ -5,6 +5,8 @@ var speed = 20
 var normalVec : Vector3
 var dirMoving : Vector3
 
+@onready var wallCheckAreaGuy = $"../../Area3D"
+
 func GetWallNormal():
 	normalVec = playerObj.get_wall_normal()
 	var rotAxisVec = Vector3(-normalVec.z, 0, normalVec.x).normalized()
@@ -25,13 +27,16 @@ func Enter():
 	GetWallNormal()
 	playerObj.wasGrounded = true
 	playerObj.stateMachine.currState = PLAYERSTATES.WALLRUN
+	
+	var collisionLocation = playerObj.get_last_slide_collision().get_position()
+	wallCheckAreaGuy.set_global_position(collisionLocation)
+	print("wallCheckAreaGuy position: ", wallCheckAreaGuy.get_global_position())
 
 func Update(delta):
 	playerObj.updateSpeed = true
-	playerObj.velocity -= 0.2 * normalVec
 	playerObj.move_and_slide()
 	
-	if !playerObj.is_on_wall():
+	if !wallCheckAreaGuy.has_overlapping_bodies():
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "AirState")
 		playerObj.gravityActive = true
@@ -61,8 +66,7 @@ func Update(delta):
 func DoJump():
 	playerObj.wasGrounded = false
 	playerObj.updateSpeed = false
-	playerObj.velocity.y = playerObj.jumpVel
-	playerObj.velocity += 5 * normalVec
+	playerObj.velocity += 5 * (normalVec + Vector3.UP).normalized()
 	Transitioned.emit(self, "AirState")
 	playerObj.gravityActive = true
 	return
