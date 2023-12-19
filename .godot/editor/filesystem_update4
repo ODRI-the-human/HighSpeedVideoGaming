@@ -1,18 +1,11 @@
 res://Player/Player.tscn
-res://Player/States/AirState.gd
-res://Player/States/WallVertSlideState.gd
-res://Player/States/WallRunState.gd
+res://LevelBits/ItemGates/ItemGate.gd
 res://Levels/Advanced Level.tscn
 res://LevelBits/Ramp4x4.tscn
 res://LevelBits/Ramp8x4.tscn
-res://LevelBits/GrappleBall.tscn
-res://LevelBits/BasicFloor.tscn
+res://LevelBits/ItemGates/GrappleGate.tscn
+res://LevelBits/ItemGates/GrappleRemoveGate.tscn
+res://LevelBits/ItemSpecific/MagnetPlatform.tscn
 res://LevelBits/Platform.tscn
-res://Player/PLAYERSTATES.gd
-res://Player/PlayerControl.gd
 res://Player/States/RunState.gd
-res://Player/States/AirDiveState.gd
-res://Player/States/State.gd
-res://Player/States/SlideState.gd
-res://Player/Misc/firstPersonHands.gd
-res://Player/Weapons/Grapple/Grap.gd
+res://Player/Weapons/Magnet/Magnet.gd

@@ -16,29 +16,53 @@ var lastFloorNormal : Vector3
 var updateSpeed = true
 var wasGrounded = true # used for coyote time, set at the end of the enter of every state. If this is true when 
 #                        entering airState, the coyote timer is started.
+var gravityVec : Vector3
 
 var canAirPunch = true
 
-@onready var neck = $Neck;
-@onready var camera = $Neck/Camera3D
-@onready var textLabel = $Neck/Camera3D/RichTextLabel
-@onready var stateMachine = $MovementStateMachine
-@onready var weaponMan = $MovementStateMachine/WeaponManager
+@export var neck : Node3D
+@export var upDirController : Node3D
+@export var camera : Node3D
+@export var textLabel : RichTextLabel
+@export var stateMachine : Node
+@export var weaponMan : Node
+
+@export var colliderTop : CollisionShape3D
+@export var colliderBottom : CollisionShape3D
+@export var colliderCircle : CollisionShape3D
+@export var checkStopSliding : Area3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+#var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	floor_max_angle = deg_to_rad(89)
 	floor_snap_length = 2
 	currFloorNormal = get_floor_normal()
+	SetNewBasisAndShit(upDirController.get_global_transform().basis.y)
+
+func SetNewBasisAndShit(UP : Vector3):
+	UP = UP.normalized()
+	up_direction = UP
+	gravityVec = -9.8 * UP
+	print("new up: ", up_direction, " / gravity vec: ", gravityVec)
+	
+	var lastUp = colliderTop.get_global_transform().basis.y
+	var angle = lastUp.signed_angle_to(UP, colliderTop.get_global_transform().basis.x)
+	colliderTop.rotate(colliderTop.get_global_transform().basis.x, angle)
+	colliderBottom.rotate(colliderTop.get_global_transform().basis.x, angle)
+	colliderCircle.rotate(colliderTop.get_global_transform().basis.x, angle)
+	checkStopSliding.rotate(colliderTop.get_global_transform().basis.x, angle)
+	colliderTop.position = 1.4 * UP
+	colliderBottom.position = 0.5 * UP
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		neck.rotate_y(-event.relative.x * sensitivity)
 		camera.rotate_x(-event.relative.y * sensitivity)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+#		neck.rotate(upDirController.get_global_transform().basis.y, -event.relative.x * sensitivity)
+#		camera.rotate(neck.get_global_transform().basis.x, -event.relative.y * sensitivity)
 
 func _process(delta):
 	var colObject = weaponMan.rayCaster.get_collider()
@@ -46,7 +70,12 @@ func _process(delta):
 	if colObject != null:
 		name = colObject.to_string()
 	
-	textLabel.text = "hey buckaroo 'last' velocity: " + str(lastVelocity.length()) + "\nlast velocity components:\n" + str(lastVelocity.x) + "\n" + str(lastVelocity.y) + "\n" + str(lastVelocity.z) + "\nlast real velocity: " + str(lastRealVelocity.length()) + "\nlast real velocity components:\n" + str(lastRealVelocity.x) + "\n" + str(lastRealVelocity.y) + "\n" + str(lastRealVelocity.z) + "\ncurrent state: " + str(stateMachine.current_state) + "\nprevious state: " + str(stateMachine.previous_state) + "\nfloor normal components:\n" + str(lastFloorNormal.x) + "\n" + str(lastFloorNormal.y) + "\n" + str(lastFloorNormal.z) + "\ncurrent state (number): " + str(stateMachine.currState) + "\ncurrent ray cast hit: " + name
+	var weaponObject = weaponMan.activeWeaponNode
+	var naime = "bajookie"
+	if weaponObject != null:
+		naime = weaponObject.to_string()
+	
+	textLabel.text = "hey buckaroo 'last' velocity: " + str(lastVelocity.length()) + "\nlast velocity components:\n" + str(lastVelocity.x) + "\n" + str(lastVelocity.y) + "\n" + str(lastVelocity.z) + "\nlast real velocity: " + str(lastRealVelocity.length()) + "\nlast real velocity components:\n" + str(lastRealVelocity.x) + "\n" + str(lastRealVelocity.y) + "\n" + str(lastRealVelocity.z) + "\ncurrent state: " + str(stateMachine.current_state) + "\nprevious state: " + str(stateMachine.previous_state) + "\nfloor normal components:\n" + str(lastFloorNormal.x) + "\n" + str(lastFloorNormal.y) + "\n" + str(lastFloorNormal.z) + "\ncurrent state (number): " + str(stateMachine.currState) + "\ncurrent ray cast hit: " + name + "\ncurrent weapon: " + naime
 	speedState = clamp(floor(lastVelocity.length()/20), 0, 2)
 	
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -71,7 +100,7 @@ func _process(delta):
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor() && gravityActive:
-		velocity.y -= gravity * delta
+		velocity += gravityVec * delta
 	
 	#print("velocity n shit: ", velocity.length())
 	

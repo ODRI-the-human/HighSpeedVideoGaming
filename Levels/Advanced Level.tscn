@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu4sjfbmbicyd"]
+[gd_scene load_steps=13 format=3 uid="uid://cu4sjfbmbicyd"]
 
 [ext_resource type="PackedScene" uid="uid://imj1fv8uq3o3" path="res://Player/Player.tscn" id="1_vgyq2"]
 [ext_resource type="PackedScene" uid="uid://bpy3tygr4fqui" path="res://LevelBits/BasicFloor.tscn" id="2_mjfnn"]
 [ext_resource type="PackedScene" uid="uid://ckmdgmbjvviax" path="res://LevelBits/Ramp8x4.tscn" id="3_my3vf"]
 [ext_resource type="PackedScene" uid="uid://b0julw7h77xrj" path="res://LevelBits/Ramp4x4.tscn" id="4_nsqyd"]
 [ext_resource type="PackedScene" uid="uid://bertisb6vtdpb" path="res://LevelBits/Platform.tscn" id="5_l64gg"]
-[ext_resource type="PackedScene" uid="uid://btdmhdyqyhohw" path="res://LevelBits/GrappleBall.tscn" id="6_dsfwb"]
+[ext_resource type="PackedScene" uid="uid://btdmhdyqyhohw" path="res://LevelBits/ItemSpecific/GrappleBall.tscn" id="6_dsfwb"]
+[ext_resource type="PackedScene" uid="uid://117gv7nba7uy" path="res://LevelBits/ItemGates/GrappleGate.tscn" id="7_dsbhb"]
+[ext_resource type="PackedScene" uid="uid://cirec1oq825d2" path="res://LevelBits/ItemGates/GrappleRemoveGate.tscn" id="8_iqaw4"]
+[ext_resource type="PackedScene" uid="uid://h1eltwlk35lb" path="res://LevelBits/ItemSpecific/MagnetPlatform.tscn" id="9_2302w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jlkfp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,6 +31,7 @@ environment = SubResource("Environment_j4wp4")
 
 [node name="Player" parent="." instance=ExtResource("1_vgyq2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 5
 
 [node name="Dingus route" type="Node3D" parent="."]
 
@@ -1943,3 +1947,48 @@ transform = Transform3D(2.18556e-07, -5, 1.84777e-06, -5, -2.18557e-07, -1.41065
 
 [node name="Platform11" parent="FunnyRoute" instance=ExtResource("5_l64gg")]
 transform = Transform3D(2.18556e-07, -5, 1.84777e-06, -5, -2.18557e-07, -1.41065e-06, 1.41065e-06, -1.84777e-06, -5, 10, 61, -107)
+
+[node name="GrappleGate" parent="." instance=ExtResource("7_dsbhb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12, -4, -14)
+
+[node name="GrappleGate3" parent="." instance=ExtResource("7_dsbhb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 4, 0)
+ItemNumber = 1
+
+[node name="GrappleGate2" parent="." instance=ExtResource("8_iqaw4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12, 12, -98)
+
+[node name="Platform" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-1.95128e-07, 0, -3.3, -4.464, -4.37114e-08, 1.44248e-07, -1.95128e-07, 1, 6.30528e-15, 0, 3, -16)
+
+[node name="Platform10" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-1.95128e-07, -3.0503e-22, -3.3, -3.15653, 0.707107, 1.01999e-07, 3.15652, 0.707107, -1.01999e-07, -7, -2, -11)
+
+[node name="Platform11" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-1.95128e-07, 2.51215e-15, -3.3, -3.15652, -0.707107, 1.01999e-07, -3.15653, 0.707107, 1.01999e-07, -7, 9, -11)
+
+[node name="Platform2" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 0)
+
+[node name="Platform3" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 4)
+
+[node name="Platform4" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 8)
+
+[node name="Platform5" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 12)
+
+[node name="Platform6" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 16)
+
+[node name="Platform7" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 20)
+
+[node name="Platform8" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 24)
+
+[node name="Platform9" parent="." instance=ExtResource("9_2302w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 28)
+
+[editable path="GrappleGate3"]

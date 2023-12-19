@@ -4,9 +4,12 @@ class_name State
 signal Transitioned
 
 @onready var playerObj = $"../.."
-@onready var camera = $"../../Neck/Camera3D"
+@onready var camera = $"../../UpDirController/Neck/Camera3D"
 var timer = 0 # tracks how long the player has been in a state.
 var startingCameraPosition : Vector3
+
+@export var abilName : String
+@export var description : String
 
 func SetCamPosition():
 	startingCameraPosition = camera.position

@@ -5,7 +5,7 @@ var speed = 20
 var normalVec : Vector3
 var dirMoving : Vector3
 
-@onready var wallCheckAreaGuy = $"../../Area3D"
+@export var wallCheckAreaGuy : Area3D
 
 func GetWallNormal():
 	normalVec = playerObj.get_wall_normal()

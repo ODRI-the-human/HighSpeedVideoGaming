@@ -1,13 +1,14 @@
-CollisionShape3D
-Area3D
 Node3D
+CollisionShape3D
+Camera3D
+Node
+MeshInstance3D
+Area3D
 ConeTwistJoint3D
 BoneAttachment3D
 SkeletonIK3D
 AnimationTree
 AnimationPlayer
-Node
-MeshInstance3D
 Sprite3D
 RayCast3D
 WorldEnvironment
@@ -15,7 +16,6 @@ RichTextLabel
 CollisionPolygon3D
 OmniLight3D
 TextEdit
-Camera3D
 Marker3D
 CharacterBody3D
 StaticBody3D

@@ -4,7 +4,7 @@ class_name WallVertSlideState
 var normalVec : Vector3
 var dirMoving : Vector3
 var speed : float
-@onready var wallCheckAreaGuy = $"../../Area3D"
+@export var wallCheckAreaGuy : Area3D
 
 func Enter():
 	playerObj.canAirPunch = true

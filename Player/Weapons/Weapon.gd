@@ -8,6 +8,9 @@ var cooldown1 = 0
 func _ready():
 	pass # Replace with function body.
 
+func Deactivate():
+	active = false
+
 func Attack():
 	pass
 
