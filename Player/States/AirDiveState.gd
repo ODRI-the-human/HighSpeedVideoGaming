@@ -6,7 +6,7 @@ var dirToFly : Vector3
 
 func Enter():
 	print("Entered air dive state")
-	dirToFly = clamp(playerObj.lastVelocity.length(), 20, INF) * (-camera.get_global_transform().basis.z - 1 * Vector3(0, 1, 0)).normalized()
+	dirToFly = clamp(playerObj.lastVelocity.length(), 20, INF) * (-camera.get_global_transform().basis.z - 1 * upDirController.get_global_transform().basis.y).normalized()
 	playerObj.wasGrounded = false
 	playerObj.stateMachine.currState = PLAYERSTATES.AIRDIVE
 

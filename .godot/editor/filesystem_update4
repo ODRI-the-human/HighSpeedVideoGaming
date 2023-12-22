@@ -1,11 +1,8 @@
 res://Player/Player.tscn
 res://LevelBits/ItemGates/ItemGate.gd
+res://Player/States/State.gd
 res://Levels/Advanced Level.tscn
-res://LevelBits/Ramp4x4.tscn
-res://LevelBits/Ramp8x4.tscn
-res://LevelBits/ItemGates/GrappleGate.tscn
-res://LevelBits/ItemGates/GrappleRemoveGate.tscn
-res://LevelBits/ItemSpecific/MagnetPlatform.tscn
-res://LevelBits/Platform.tscn
-res://Player/States/RunState.gd
+res://LevelBits/ItemSpecific/Magnet/MagnetPlatform.tscn
+res://Player/PlayerControl.gd
 res://Player/Weapons/Magnet/Magnet.gd
+res://Player/Weapons/Magnet/MagnetAttractState.gd

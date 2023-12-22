@@ -18,7 +18,7 @@ var wasGrounded = true # used for coyote time, set at the end of the enter of ev
 #                        entering airState, the coyote timer is started.
 var gravityVec : Vector3
 
-var canAirPunch = true
+var canAirPunch : bool
 
 @export var neck : Node3D
 @export var upDirController : Node3D
@@ -31,6 +31,9 @@ var canAirPunch = true
 @export var colliderBottom : CollisionShape3D
 @export var colliderCircle : CollisionShape3D
 @export var checkStopSliding : Area3D
+@export var becomeAirborneArea : Area3D
+@export var becomeAirborneArea2 : Area3D
+var doCheckIfNoLongerOnFloor = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -61,10 +64,18 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		neck.rotate_y(-event.relative.x * sensitivity)
 		camera.rotate_x(-event.relative.y * sensitivity)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 #		neck.rotate(upDirController.get_global_transform().basis.y, -event.relative.x * sensitivity)
 #		camera.rotate(neck.get_global_transform().basis.x, -event.relative.y * sensitivity)
 
 func _process(delta):
+	if velocity.length() > 0:
+		var dota = get_real_velocity().dot(colliderTop.get_global_transform().basis.y)
+		var poopVec = get_real_velocity() - dota * colliderTop.get_global_transform().basis.y
+		becomeAirborneArea.set_global_position(get_global_position() + clamp(poopVec.length() / 30, 0.4, 1.6) * poopVec.normalized())
+	else:
+		becomeAirborneArea.position = Vector3.ZERO
+	
 	var colObject = weaponMan.rayCaster.get_collider()
 	var name = "bajookie"
 	if colObject != null:
@@ -92,6 +103,12 @@ func _process(delta):
 		else:
 			Engine.time_scale = 0.05
 	
+	if Input.is_action_just_pressed("DebugSlow2"):
+		if Engine.time_scale == 0.01:
+			Engine.time_scale = 1
+		else:
+			Engine.time_scale = 0.01
+	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 	
@@ -105,4 +122,4 @@ func _physics_process(delta):
 	#print("velocity n shit: ", velocity.length())
 	
 	input_dir = Input.get_vector("moveLeft", "moveRight", "moveForward", "moveBack")
-	direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = (neck.get_global_transform().basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

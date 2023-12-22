@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://imj1fv8uq3o3"]
+[gd_scene load_steps=31 format=3 uid="uid://imj1fv8uq3o3"]
 
 [ext_resource type="Script" path="res://Player/PlayerControl.gd" id="1_qq07l"]
 [ext_resource type="PackedScene" uid="uid://bmi63foipxt2m" path="res://Player/fashionHands.glb" id="2_82xoe"]
@@ -21,20 +21,30 @@
 [ext_resource type="Script" path="res://Player/Weapons/Magnet/MagnetAttractState.gd" id="19_vme4g"]
 [ext_resource type="Script" path="res://Player/States/State.gd" id="20_ijujq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mh8i4"]
-size = Vector3(0.7, 1, 0.7)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_to1mf"]
+radius = 0.35
+height = 1.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mumi2"]
-size = Vector3(0.7, 1, 0.7)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_140nd"]
-size = Vector3(0.7, 0.8, 0.7)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_6kxha"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_goskr"]
 radius = 0.15
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2vahu"]
+radius = 0.15
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g0od1"]
+radius = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_go0ii"]
-height = 5.0
+height = 8.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qfaip"]
+radius = 0.04
+height = 8.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ivvka"]
+radius = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bp06e"]
 radius = 0.25
@@ -44,7 +54,7 @@ radius = 0.25
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymqsa"]
 albedo_color = Color(0.172549, 0.172549, 0.172549, 1)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("neck", "upDirController", "camera", "textLabel", "stateMachine", "weaponMan", "colliderTop", "colliderBottom", "colliderCircle", "checkStopSliding")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("neck", "upDirController", "camera", "textLabel", "stateMachine", "weaponMan", "colliderTop", "colliderBottom", "colliderCircle", "checkStopSliding", "becomeAirborneArea", "becomeAirborneArea2")]
 floor_constant_speed = true
 floor_max_angle = 1.54462
 script = ExtResource("1_qq07l")
@@ -56,33 +66,52 @@ stateMachine = NodePath("MovementStateMachine")
 weaponMan = NodePath("MovementStateMachine/WeaponManager")
 colliderTop = NodePath("ColliderTop")
 colliderBottom = NodePath("ColliderBottom")
-colliderCircle = NodePath("ColliderCircle")
+colliderCircle = NodePath("MagnetLandArea/ColliderCircle")
 checkStopSliding = NodePath("CheckIfCanStopSliding")
+becomeAirborneArea = NodePath("MagnetLandArea/ColliderCircle/BecomeAirborneArea")
+becomeAirborneArea2 = NodePath("MagnetLandArea/ColliderCircle/BecomeAirborneArea2")
 
 [node name="CheckIfCanStopSliding" type="Area3D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CheckIfCanStopSliding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
-shape = SubResource("BoxShape3D_mh8i4")
+shape = SubResource("CapsuleShape3D_to1mf")
 
 [node name="ColliderTop" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
-shape = SubResource("BoxShape3D_mumi2")
+shape = SubResource("CapsuleShape3D_goskr")
 
 [node name="ColliderBottom" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_140nd")
+shape = SubResource("CapsuleShape3D_2vahu")
 
-[node name="ColliderCircle" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_6kxha")
-
-[node name="MagnetGroundDetector" type="Area3D" parent="ColliderCircle"]
+[node name="MagnetLandArea" type="Area3D" parent="."]
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ColliderCircle/MagnetGroundDetector"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+[node name="ColliderCircle" type="CollisionShape3D" parent="MagnetLandArea"]
+shape = SubResource("SphereShape3D_g0od1")
+
+[node name="MagnetGroundDetector" type="Area3D" parent="MagnetLandArea/ColliderCircle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MagnetLandArea/ColliderCircle/MagnetGroundDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
 shape = SubResource("CapsuleShape3D_go0ii")
+
+[node name="BecomeAirborneArea" type="Area3D" parent="MagnetLandArea/ColliderCircle"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MagnetLandArea/ColliderCircle/BecomeAirborneArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("CapsuleShape3D_qfaip")
+
+[node name="BecomeAirborneArea2" type="Area3D" parent="MagnetLandArea/ColliderCircle"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MagnetLandArea/ColliderCircle/BecomeAirborneArea2"]
+shape = SubResource("SphereShape3D_ivvka")
 
 [node name="WallSlideDetector" type="Area3D" parent="."]
 collision_mask = 2
@@ -95,12 +124,12 @@ shape = SubResource("SphereShape3D_bp06e")
 [node name="Neck" type="Node3D" parent="UpDirController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.858, 0.036)
 
-[node name="debuggins cam" type="Camera3D" parent="UpDirController/Neck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.906311, 2.56646)
-current = true
-fov = 106.4
-
 [node name="Camera3D" type="Camera3D" parent="UpDirController/Neck"]
+current = true
+
+[node name="debuggins cam" type="Camera3D" parent="UpDirController/Neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.093689, 2.56646)
+fov = 106.4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UpDirController/Neck/Camera3D"]
 offset_right = 718.0
@@ -153,7 +182,7 @@ bones/93/rotation = Quaternion(-0.751621, 0.0695249, -0.655331, 0.0278302)
 bones/116/position = Vector3(-0.249376, 1.35355, -0.220315)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="UpDirController/Neck/Camera3D/firstPersonHands/metarig/Skeleton3D" index="1"]
-transform = Transform3D(-0.786084, 0.558581, -0.26469, 0.442903, 0.807704, 0.389168, 0.431172, 0.188687, -0.88232, -0.170012, 1.70341, 0.226741)
+transform = Transform3D(-0.786083, 0.558581, -0.26469, 0.442903, 0.807704, 0.389168, 0.431173, 0.188686, -0.882319, -0.170012, 1.70341, 0.226741)
 bone_name = "hand.R"
 bone_idx = 72
 
@@ -168,7 +197,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ymqsa")
 
 [node name="MovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "animPlayer")]
 script = ExtResource("3_giv07")
-initial_state = NodePath("RunState")
+initial_state = NodePath("AirState")
 animPlayer = NodePath("../UpDirController/Neck/Camera3D/firstPersonHands/AnimationPlayer")
 
 [node name="RunState" type="Node" parent="MovementStateMachine"]
@@ -216,21 +245,21 @@ script = ExtResource("16_wq537")
 [node name="GrapRetractState" type="Node" parent="MovementStateMachine"]
 script = ExtResource("15_dejrs")
 
-[node name="Magnet" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("rayCaster", "reticle", "skeleton", "ColliderCircle", "ColliderTop", "ColliderBottom", "upDirController", "magnetGroundDetector")]
+[node name="Magnet" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("rayCaster", "reticle", "skeleton", "ColliderCircle", "ColliderTop", "ColliderBottom", "magnetGroundDetector")]
 script = ExtResource("18_dm1m6")
 rayCaster = NodePath("../../UpDirController/Neck/Camera3D/RayCast3D")
 reticle = NodePath("../../UpDirController/Neck/Camera3D/Sprite3D")
 skeleton = NodePath("../../UpDirController/Neck/Camera3D/firstPersonHands/metarig/Skeleton3D")
-ColliderCircle = NodePath("../../ColliderCircle")
+ColliderCircle = NodePath("../../MagnetLandArea/ColliderCircle")
 ColliderTop = NodePath("../../ColliderTop")
 ColliderBottom = NodePath("../../ColliderBottom")
-upDirController = NodePath("../../UpDirController")
-magnetGroundDetector = NodePath("../../ColliderCircle/MagnetGroundDetector")
+magnetGroundDetector = NodePath("../../MagnetLandArea/ColliderCircle/MagnetGroundDetector")
 abilName = "Grappingaboj"
 
-[node name="MagnetAttractState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("magnetState")]
+[node name="MagnetAttractState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("magnetState", "magnetLandArea")]
 script = ExtResource("19_vme4g")
 magnetState = NodePath("../Magnet")
+magnetLandArea = NodePath("../../MagnetLandArea")
 abilName = "Grappingaboj"
 
 [node name="shut up" type="Node" parent="MovementStateMachine"]

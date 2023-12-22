@@ -13,7 +13,7 @@ func Enter():
 	colliderTop.disabled = true
 	
 	if playerObj.velocity.length() >= 1:
-		dirMoving = playerObj.lastVelocity
+#		dirMoving = playerObj.lastVelocity
 		speed = dirMoving.length()
 		dirMoving.y = 0
 		dirMoving = dirMoving.normalized() * speed
@@ -33,11 +33,16 @@ func Update(delta):
 	playerObj.updateSpeed = true
 	playerObj.move_and_slide()
 	
-	if !playerObj.is_on_floor():
-		playerObj.velocity = playerObj.lastRealVelocity
+	if playerObj.is_on_wall() && playerObj.get_floor_normal().angle_to(upDirController.get_global_transform().basis.y) > deg_to_rad(45): # The following is all for transitioning to the wall climb state.
 		playerObj.updateSpeed = false
-		Transitioned.emit(self, "AirDiveState")
+		Transitioned.emit(self, "WallVertSlideState")
 		return
+	
+#	if !playerObj.is_on_floor():
+#		playerObj.velocity = playerObj.lastRealVelocity
+#		playerObj.updateSpeed = false
+#		Transitioned.emit(self, "AirDiveState")
+#		return
 	
 	CheckIfToBecomeAirborne()
 	
@@ -46,19 +51,19 @@ func Update(delta):
 	var vel = dirMoving
 	var slopeVec = GetFloorVec()
 	
-	playerObj.velocity.x = vel.x
-	playerObj.velocity.z = vel.z
-	dirMoving += 0.15 * slopeVec
+#	playerObj.velocity.x = vel.x
+#	playerObj.velocity.z = vel.z
+	playerObj.velocity += 15 * slopeVec * delta
 	
-	if Input.is_action_just_pressed("jump"):
+	
+	if Input.is_action_just_pressed("jump") && !areaTop.has_overlapping_bodies():
 		DoJump()
 		return
 	
 	if !Input.is_action_pressed("slide") && !areaTop.has_overlapping_bodies():
 		playerObj.updateSpeed = false
-		var newVec = -camera.get_global_transform().basis.z
-		newVec.y = 0
-		playerObj.velocity = newVec * playerObj.lastVelocity.length()
+		var newVec = -neck.get_global_transform().basis.z
+		playerObj.velocity = newVec * playerObj.lastRealVelocity.length()
 		Transitioned.emit(self, "RunState")
 		return
 

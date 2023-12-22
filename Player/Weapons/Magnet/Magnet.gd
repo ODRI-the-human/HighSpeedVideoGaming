@@ -16,7 +16,6 @@ var isOnMagneticSurface = false
 var attractObjNormal : Vector3
 var currentUp : Vector3
 var angle : float
-@export var upDirController : Node3D
 @export var magnetGroundDetector : Area3D
 var surfaceCheckTimer = 0
 
@@ -44,22 +43,25 @@ func Alt():
 			MagnetMoment(-1, castObj, rayCaster.get_collision_point())
 
 func MagnetMoment(sign : int, castObj, pos):
+	if isOnMagneticSurface:
+		upDirController.rotate(upDirController.get_global_transform().basis.x, -totalAngleRotated)
+	playerObj.SetNewBasisAndShit(Vector3(0, 1, 0))
 	isOnMagneticSurface = false
 	currentUp = playerObj.up_direction
-	attractObjNormal = rayCaster.get_collision_normal()
-	angle = currentUp.angle_to(attractObjNormal)
+	attractObjNormal = -castObj.get_global_transform().basis.y
+	angle = currentUp.signed_angle_to(attractObjNormal, upDirController.get_global_transform().basis.x)
 	attractObj = castObj
 	attractPosition = pos
 	magnetSign = sign
-	print("pooping currently, attractObjNormal: ", attractObjNormal, " / currentUp: ", currentUp, " / angle: ", angle)
+	print("pooping currently, attractObjNormal: ", attractObjNormal, " / currentUp: ", currentUp, " / angle: ", rad_to_deg(angle))
 	playerObj.stateMachine.animPlayer.play("grapThrow")
 	Transitioned.emit(self, "MagnetAttractState")
 	isMagnetting = true
 	InvertColliders(true)
 	totalFrac = 0
 	lastFracEased = 0
-	totalAngleRotated = 0
 	rotateTimer = 0
+	totalAngleRotated = 0
 
 func AltRelease():
 	AnyStateRelease()
@@ -83,12 +85,16 @@ func AnyStateRelease():
 		cooldown1 = 0
 		Transitioned.emit(self, "AirState")
 		isMagnetting = false
+		surfaceCheckTimer = 0
 		if !isOnMagneticSurface:
 			totalFrac = 0
-			angle = deg_to_rad(360 - rad_to_deg(totalAngleRotated))
+			angle = deg_to_rad(360) - totalAngleRotated
+			print("angle: ", rad_to_deg(angle))
 			totalFrac = 0
 			lastFracEased = 0
+			rotateTimer = 0
 			totalAngleRotated = 0
+			playerObj.doCheckIfNoLongerOnFloor = false
 
 func Deactivate():
 	reticle.modulate = Color.from_hsv(0, 0, 1, 1)
@@ -98,7 +104,8 @@ func Deactivate():
 func _process(delta):
 	surfaceCheckTimer += 1
 	if active:
-		if isOnMagneticSurface && surfaceCheckTimer % 15 == 0:
+#		print("total angle rotated: ", rad_to_deg(totalAngleRotated))
+		if !isMagnetting && isOnMagneticSurface && surfaceCheckTimer % 15 == 0:
 			var isAboveMagnet = false
 			for body in magnetGroundDetector.get_overlapping_bodies():
 				if body.is_in_group("Magnetic"):
@@ -107,12 +114,13 @@ func _process(delta):
 			
 			if !isAboveMagnet:
 				playerObj.SetNewBasisAndShit(Vector3(0, 1, 0))
-				angle = deg_to_rad(360 - rad_to_deg(angle))
+				angle = deg_to_rad(360) - totalAngleRotated
 				totalFrac = 0
 				lastFracEased = 0
 				totalAngleRotated = 0
 				surfaceCheckTimer = 0
 				rotateTimer = 0
+				playerObj.doCheckIfNoLongerOnFloor = false
 				Transitioned.emit(self, "AirState")
 				isOnMagneticSurface = false
 		

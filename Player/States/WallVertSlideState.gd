@@ -45,6 +45,13 @@ func Update(delta):
 		Transitioned.emit(self, "RunState")
 		return
 	
+	var currentNormal = playerObj.get_wall_normal()
+	if currentNormal != normalVec && playerObj.get_last_slide_collision() != null:
+		normalVec = currentNormal
+		var collisionLocation = playerObj.get_last_slide_collision().get_position()
+		wallCheckAreaGuy.set_global_position(collisionLocation)
+		print("wallCheckAreaGuy position: ", wallCheckAreaGuy.get_global_position())
+	
 	if playerObj.direction != Vector3.ZERO:
 		var dirToMove = playerObj.direction
 		var rotAxisVec = Vector3(-normalVec.z, 0, normalVec.x)

@@ -4,7 +4,10 @@ class_name State
 signal Transitioned
 
 @onready var playerObj = $"../.."
+@onready var upDirController = $"../../UpDirController"
+@onready var becomeAirborneArea = $"../../MagnetLandArea/ColliderCircle/BecomeAirborneArea"
 @onready var camera = $"../../UpDirController/Neck/Camera3D"
+@onready var neck = $"../../UpDirController/Neck"
 var timer = 0 # tracks how long the player has been in a state.
 var startingCameraPosition : Vector3
 
@@ -27,12 +30,24 @@ func CameraShit():
 	#print("gomber")
 	camera.position = startingCameraPosition.lerp(Vector3(0, 0, 0), 1 - pow(clamp(1 - timer * 8, 0, 1), 5))
 
+func FrigUpColliders():
+	if playerObj.becomeAirborneArea2.get_overlapping_bodies().size() > 0:
+		var platformWasOn = playerObj.becomeAirborneArea2.get_overlapping_bodies()[0]
+		playerObj.add_collision_exception_with(platformWasOn)
+
+func BecomeAirborne():
+	print("television, real velocity: ", playerObj.get_real_velocity(), " / player up direction: ", playerObj.up_direction)
+	playerObj.velocity = playerObj.get_real_velocity()#playerObj.lastVelocity.length() * playerObj.lastRealVelocity.normalized()
+	playerObj.lastVelocity = playerObj.get_real_velocity()
+	playerObj.updateSpeed = false
+	Transitioned.emit(self, "AirState")
+
 func CheckIfToBecomeAirborne(): #General stuff for checking if the player should become airborne when in grounded state
-	if !playerObj.is_on_floor() || (playerObj.get_floor_normal().y > playerObj.currFloorNormal.y + 0.2 && playerObj.get_floor_normal().y == 1):
-		print("television, lastRealVelocity: ", playerObj.lastRealVelocity)
-		playerObj.velocity = playerObj.lastVelocity.length() * playerObj.lastRealVelocity.normalized()
-		playerObj.updateSpeed = false
-		Transitioned.emit(self, "AirState")
+	if becomeAirborneArea.get_overlapping_bodies().size() == 0:
+		FrigUpColliders()
+		BecomeAirborne()
+	elif !playerObj.is_on_floor():
+		BecomeAirborne()
 
 func ActivateJump(normalBias): 
 	#   jumpFactor is mainly used by slide, to make the player jumo higher if needed.
@@ -52,17 +67,29 @@ func SetJumpLandingVelocity():
 	print("floor vec: ", GetFloorVec())
 
 func GetFloorVec():
-	var normalVec = playerObj.get_floor_normal()
-	var slopeVec : Vector3
-	if normalVec.y != 1:
-		var rotAxisVec = Vector3(-normalVec.z, 0, normalVec.x).normalized()
-		slopeVec = normalVec.rotated(rotAxisVec, deg_to_rad(90))
-		if slopeVec.y > 0:
-			slopeVec = -slopeVec
+	var dot = playerObj.get_floor_normal().dot(upDirController.get_global_transform().basis.y)
+	if dot > 0.95:
+		return Vector3.ZERO
 	else:
-		slopeVec = Vector3.ZERO
+		var rotAxisVec = playerObj.get_floor_normal().cross(upDirController.get_global_transform().basis.y).normalized()
+		var rotatedVector = playerObj.get_floor_normal().rotated(rotAxisVec, deg_to_rad(270))
+		if rotatedVector.dot(upDirController.get_global_transform().basis.y) > 0:
+			rotatedVector = -rotatedVector
+		
+		return rotatedVector
 	
-	return slopeVec
+	# Old method. Instead gonna try to do a system that uses rotation/cross product n shit
+#	var normalVec = playerObj.get_floor_normal()
+#	var slopeVec : Vector3
+#	if abs(normalVec.y) != 1:
+#		var rotAxisVec = Vector3(-normalVec.z, 0, normalVec.x).normalized()
+#		slopeVec = normalVec.rotated(rotAxisVec, deg_to_rad(90))
+#		if slopeVec.y > 0:
+#			slopeVec = -slopeVec
+#	else:
+#		slopeVec = Vector3.ZERO
+	
+#	return slopeVec
 
 func Physics_update(_delta: float):
 	pass

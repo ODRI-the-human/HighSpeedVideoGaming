@@ -24,7 +24,6 @@ func _ready():
 
 func _process(delta):
 	if current_state:
-		current_state.timer += delta
 		current_state.Update(delta)
 		current_state.CameraShit()
 		if playerObj.updateSpeed:
@@ -33,6 +32,7 @@ func _process(delta):
 			if playerObj.is_on_floor():
 				playerObj.lastFloorNormal = playerObj.get_floor_normal()
 		playerObj.currFloorNormal = playerObj.get_floor_normal()
+		current_state.timer += delta
 	
 	
 

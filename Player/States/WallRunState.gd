@@ -42,6 +42,13 @@ func Update(delta):
 		playerObj.gravityActive = true
 		return
 	
+	var currentNormal = playerObj.get_wall_normal()
+	if currentNormal != normalVec && playerObj.get_last_slide_collision() != null:
+		var collisionLocation = playerObj.get_last_slide_collision().get_position()
+		wallCheckAreaGuy.set_global_position(collisionLocation)
+		GetWallNormal()
+		print("wallCheckAreaGuy position: ", wallCheckAreaGuy.get_global_position())
+	
 	playerObj.velocity.x = dirMoving.x
 	playerObj.velocity.y = 0
 	playerObj.velocity.z = dirMoving.z

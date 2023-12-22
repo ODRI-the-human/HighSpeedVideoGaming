@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btdmhdyqyhohw" path="res://LevelBits/ItemSpecific/GrappleBall.tscn" id="6_dsfwb"]
 [ext_resource type="PackedScene" uid="uid://117gv7nba7uy" path="res://LevelBits/ItemGates/GrappleGate.tscn" id="7_dsbhb"]
 [ext_resource type="PackedScene" uid="uid://cirec1oq825d2" path="res://LevelBits/ItemGates/GrappleRemoveGate.tscn" id="8_iqaw4"]
-[ext_resource type="PackedScene" uid="uid://h1eltwlk35lb" path="res://LevelBits/ItemSpecific/MagnetPlatform.tscn" id="9_2302w"]
+[ext_resource type="PackedScene" uid="uid://h1eltwlk35lb" path="res://LevelBits/ItemSpecific/Magnet/MagnetPlatform.tscn" id="9_e545s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jlkfp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -58,51 +58,6 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 24, -4
 [node name="Pedestal39" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 28, -4, 0)
 
-[node name="Pedestal40" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 32, -4, 0)
-
-[node name="Pedestal41" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 36, -4, 0)
-
-[node name="Pedestal42" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 40, -4, 0)
-
-[node name="Pedestal43" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 44, -4, 0)
-
-[node name="Pedestal44" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 48, -4, 0)
-
-[node name="Pedestal45" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 52, -4, 0)
-
-[node name="Pedestal46" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 56, -4, 0)
-
-[node name="Pedestal47" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 60, -4, 0)
-
-[node name="Pedestal48" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 64, -4, 0)
-
-[node name="Pedestal49" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 68, -4, 0)
-
-[node name="Pedestal50" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 72, -4, 0)
-
-[node name="Pedestal51" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 76, -4, 0)
-
-[node name="Pedestal52" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 80, -4, 0)
-
-[node name="Pedestal53" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 84, -4, 0)
-
-[node name="Pedestal54" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 88, -4, 0)
-
 [node name="Pedestal55" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 12, -8, 0)
 
@@ -118,50 +73,11 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 24, -8
 [node name="Pedestal59" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 28, -8, 0)
 
+[node name="Pedestal40" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 32, -4, 0)
+
 [node name="Pedestal60" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 32, -8, 0)
-
-[node name="Pedestal61" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 36, -8, 0)
-
-[node name="Pedestal62" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 40, -8, 0)
-
-[node name="Pedestal63" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 44, -8, 0)
-
-[node name="Pedestal64" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 48, -8, 0)
-
-[node name="Pedestal65" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 52, -8, 0)
-
-[node name="Pedestal66" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 56, -8, 0)
-
-[node name="Pedestal67" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 60, -8, 0)
-
-[node name="Pedestal68" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 64, -8, 0)
-
-[node name="Pedestal69" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 68, -8, 0)
-
-[node name="Pedestal70" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 72, -8, 0)
-
-[node name="Pedestal71" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 76, -8, 0)
-
-[node name="Pedestal72" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 80, -8, 0)
-
-[node name="Pedestal73" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 84, -8, 0)
-
-[node name="Pedestal74" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 88, -8, 0)
 
 [node name="Pedestal75" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 12, -12, 0)
@@ -181,47 +97,14 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 28, -1
 [node name="Pedestal80" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 32, -12, 0)
 
+[node name="Pedestal41" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 36, -4, 0)
+
+[node name="Pedestal61" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 36, -8, 0)
+
 [node name="Pedestal81" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 36, -12, 0)
-
-[node name="Pedestal82" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 40, -12, 0)
-
-[node name="Pedestal83" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 44, -12, 0)
-
-[node name="Pedestal84" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 48, -12, 0)
-
-[node name="Pedestal85" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 52, -12, 0)
-
-[node name="Pedestal86" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 56, -12, 0)
-
-[node name="Pedestal87" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 60, -12, 0)
-
-[node name="Pedestal88" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 64, -12, 0)
-
-[node name="Pedestal89" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 68, -12, 0)
-
-[node name="Pedestal90" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 72, -12, 0)
-
-[node name="Pedestal91" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 76, -12, 0)
-
-[node name="Pedestal92" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 80, -12, 0)
-
-[node name="Pedestal93" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 84, -12, 0)
-
-[node name="Pedestal94" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 88, -12, 0)
 
 [node name="Pedestal95" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 12, -16, 0)
@@ -244,11 +127,47 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 32, -1
 [node name="Pedestal101" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 36, -16, 0)
 
+[node name="Pedestal42" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 40, -4, 0)
+
+[node name="Pedestal62" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 40, -8, 0)
+
+[node name="Pedestal82" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 40, -12, 0)
+
 [node name="Pedestal102" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 40, -16, 0)
 
+[node name="Pedestal43" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 44, -4, 0)
+
+[node name="Pedestal63" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 44, -8, 0)
+
+[node name="Pedestal83" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 44, -12, 0)
+
 [node name="Pedestal103" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 44, -16, 0)
+
+[node name="Pedestal44" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 48, -4, 0)
+
+[node name="Pedestal64" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 48, -8, 0)
+
+[node name="Pedestal84" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 48, -12, 0)
+
+[node name="Pedestal45" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 52, -4, 0)
+
+[node name="Pedestal65" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 52, -8, 0)
+
+[node name="Pedestal85" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 52, -12, 0)
 
 [node name="Pedestal104" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 48, -16, 0)
@@ -256,11 +175,47 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 48, -1
 [node name="Pedestal105" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 52, -16, 0)
 
+[node name="Pedestal46" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 56, -4, 0)
+
+[node name="Pedestal66" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 56, -8, 0)
+
+[node name="Pedestal86" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 56, -12, 0)
+
 [node name="Pedestal106" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 56, -16, 0)
 
+[node name="Pedestal47" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 60, -4, 0)
+
+[node name="Pedestal67" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 60, -8, 0)
+
+[node name="Pedestal87" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 60, -12, 0)
+
 [node name="Pedestal107" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 60, -16, 0)
+
+[node name="Pedestal48" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 64, -4, 0)
+
+[node name="Pedestal68" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 64, -8, 0)
+
+[node name="Pedestal88" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 64, -12, 0)
+
+[node name="Pedestal49" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 68, -4, 0)
+
+[node name="Pedestal69" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 68, -8, 0)
+
+[node name="Pedestal89" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 68, -12, 0)
 
 [node name="Pedestal108" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 64, -16, 0)
@@ -268,20 +223,197 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 64, -1
 [node name="Pedestal109" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 68, -16, 0)
 
+[node name="Pedestal50" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 72, -4, 0)
+
+[node name="Pedestal70" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 72, -8, 0)
+
+[node name="Pedestal90" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 72, -12, 0)
+
 [node name="Pedestal110" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 72, -16, 0)
+
+[node name="Pedestal51" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 76, -4, 0)
+
+[node name="Pedestal71" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 76, -8, 0)
+
+[node name="Pedestal91" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 76, -12, 0)
 
 [node name="Pedestal111" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 76, -16, 0)
 
+[node name="Pedestal52" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 117.866)
+
+[node name="Pedestal53" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 121.866)
+
+[node name="Pedestal72" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 117.866)
+
+[node name="Pedestal73" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 121.866)
+
+[node name="Pedestal54" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 125.866)
+
+[node name="Pedestal74" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 125.866)
+
+[node name="Pedestal92" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 117.866)
+
+[node name="Pedestal93" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 121.866)
+
+[node name="Pedestal94" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 125.866)
+
 [node name="Pedestal112" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 80, -16, 0)
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 129.866)
 
 [node name="Pedestal113" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 84, -16, 0)
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 129.866)
 
 [node name="Pedestal114" parent="Dingus route" instance=ExtResource("2_mjfnn")]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 88, -16, 0)
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 129.866)
+
+[node name="Pedestal115" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 117.866)
+
+[node name="Pedestal116" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 121.866)
+
+[node name="Pedestal117" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 125.866)
+
+[node name="Pedestal118" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 129.866)
+
+[node name="Pedestal119" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 133.866)
+
+[node name="Pedestal120" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 133.866)
+
+[node name="Pedestal121" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 133.866)
+
+[node name="Pedestal122" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 133.866)
+
+[node name="Pedestal123" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 137.866)
+
+[node name="Pedestal124" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 137.866)
+
+[node name="Pedestal125" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 137.866)
+
+[node name="Pedestal126" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 137.866)
+
+[node name="Pedestal127" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 141.866)
+
+[node name="Pedestal128" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 141.866)
+
+[node name="Pedestal129" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 141.866)
+
+[node name="Pedestal130" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 145.866)
+
+[node name="Pedestal131" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 145.866)
+
+[node name="Pedestal132" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 145.866)
+
+[node name="Pedestal133" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 141.866)
+
+[node name="Pedestal134" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 145.866)
+
+[node name="Pedestal135" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 149.866)
+
+[node name="Pedestal136" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 149.866)
+
+[node name="Pedestal137" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 149.866)
+
+[node name="Pedestal138" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 149.866)
+
+[node name="Pedestal139" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 153.866)
+
+[node name="Pedestal140" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 153.866)
+
+[node name="Pedestal141" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 153.866)
+
+[node name="Pedestal142" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 153.866)
+
+[node name="Pedestal143" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 157.866)
+
+[node name="Pedestal144" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 157.866)
+
+[node name="Pedestal145" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 157.866)
+
+[node name="Pedestal146" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 161.866)
+
+[node name="Pedestal147" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 161.866)
+
+[node name="Pedestal148" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 161.866)
+
+[node name="Pedestal149" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 157.866)
+
+[node name="Pedestal150" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 161.866)
+
+[node name="Pedestal151" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 165.866)
+
+[node name="Pedestal152" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 165.866)
+
+[node name="Pedestal153" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 165.866)
+
+[node name="Pedestal154" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 165.866)
+
+[node name="Pedestal155" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 15.0627, 169.866)
+
+[node name="Pedestal156" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 11.0627, 169.866)
+
+[node name="Pedestal157" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 7.06271, 169.866)
+
+[node name="Pedestal158" parent="Dingus route" instance=ExtResource("2_mjfnn")]
+transform = Transform3D(4, 0, 4.40536e-13, 0, 4, 0, -4.40536e-13, 0, 4, 8.63251, 3.06271, 169.866)
 
 [node name="Pedestal20" parent="Dingus route" instance=ExtResource("2_mjfnn")]
 transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, -30, -26, -2)
@@ -1958,37 +2090,28 @@ ItemNumber = 1
 [node name="GrappleGate2" parent="." instance=ExtResource("8_iqaw4")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12, 12, -98)
 
-[node name="Platform" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-1.95128e-07, 0, -3.3, -4.464, -4.37114e-08, 1.44248e-07, -1.95128e-07, 1, 6.30528e-15, 0, 3, -16)
+[node name="Platform" parent="." instance=ExtResource("9_e545s")]
+transform = Transform3D(-2.88495e-07, 0, 1.3, 0, 1, 0, -6.6, 0, -5.68248e-08, -0.6, 25, 10)
 
-[node name="Platform10" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-1.95128e-07, -3.0503e-22, -3.3, -3.15653, 0.707107, 1.01999e-07, 3.15652, 0.707107, -1.01999e-07, -7, -2, -11)
+[node name="Platform3" parent="." instance=ExtResource("9_e545s")]
+transform = Transform3D(1.5, 0, 3.07902e-14, 0, 1, 0, -7.10543e-15, 0, 6.5, 12, 27, -16)
 
-[node name="Platform11" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-1.95128e-07, 2.51215e-15, -3.3, -3.15652, -0.707107, 1.01999e-07, -3.15653, 0.707107, 1.01999e-07, -7, 9, -11)
+[node name="Platform4" parent="." instance=ExtResource("9_e545s")]
+transform = Transform3D(-1.17037e-07, 0, -2.6, 0, 1, 0, 2.6775, 0, -1.1365e-07, 12, 27, 2)
 
-[node name="Platform2" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 0)
+[node name="Platform2" parent="." instance=ExtResource("9_e545s")]
+transform = Transform3D(21, 0, 0, 0, 1, 0, 0, 0, 3.15, 44, 25, 3)
 
-[node name="Platform3" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 4)
+[node name="Platform5" parent="." instance=ExtResource("9_e545s")]
+transform = Transform3D(-9.17939e-07, 2.11758e-22, 6.3, -21, -4.37114e-08, -2.75382e-07, 9.17939e-07, -1, 3.44194e-14, -5, -17, -21)
 
-[node name="Platform4" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 8)
+[node name="Platform6" parent="." instance=ExtResource("9_e545s")]
+transform = Transform3D(-9.17939e-07, 2.11758e-22, 3.15, -21, -4.37114e-08, -1.37691e-07, 9.17939e-07, -1, 1.72097e-14, 1, -101, -21)
 
-[node name="Platform5" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 12)
+[node name="Platform7" parent="." instance=ExtResource("9_e545s")]
+transform = Transform3D(-9.17939e-07, -3.31473e-15, 6.3, -18.1865, 0.5, -2.38488e-07, -10.5, -0.866025, -1.37691e-07, -30, 4.37306, -21)
 
-[node name="Platform6" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 16)
-
-[node name="Platform7" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 20)
-
-[node name="Platform8" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 24)
-
-[node name="Platform9" parent="." instance=ExtResource("9_2302w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82138e-15, -1, -8.74228e-08, 4.37114e-08, 0, 20, 28)
+[node name="Platform8" parent="." instance=ExtResource("9_e545s")]
+transform = Transform3D(-9.17939e-07, -3.31473e-15, 3.15, -18.1865, 0.5, -1.19244e-07, -10.5, -0.866025, -6.88455e-08, -24, -68.3731, -63)
 
 [editable path="GrappleGate3"]

@@ -8,6 +8,7 @@ func Enter():
 	print("Entered ground slam state")
 	playerObj.wasGrounded = false
 	playerObj.stateMachine.currState = PLAYERSTATES.AIRSLAM
+	playerObj.velocity = Vector3.ZERO
 
 func Update(delta):
 	playerObj.updateSpeed = true
@@ -20,7 +21,4 @@ func Update(delta):
 		return
 	
 	if playerObj.updateSpeed:
-		playerObj.velocity.x = 0
-		playerObj.velocity.z = 0
-		
-		playerObj.velocity.y = clamp(-40 * (4.4 * timer), -300, 0)
+		playerObj.velocity = -upDirController.get_global_transform().basis.y * clamp(40 * (4.4 * timer), 0, 300)
