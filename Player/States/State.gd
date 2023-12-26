@@ -6,6 +6,7 @@ signal Transitioned
 @onready var playerObj = $"../.."
 @onready var upDirController = $"../../UpDirController"
 @onready var becomeAirborneArea = $"../../MagnetLandArea/ColliderCircle/BecomeAirborneArea"
+@onready var becomeAirborneArea2 = $"../../MagnetLandArea/ColliderCircle/BecomeAirborneArea2"
 @onready var camera = $"../../UpDirController/Neck/Camera3D"
 @onready var neck = $"../../UpDirController/Neck"
 var timer = 0 # tracks how long the player has been in a state.
@@ -45,8 +46,10 @@ func BecomeAirborne():
 func CheckIfToBecomeAirborne(): #General stuff for checking if the player should become airborne when in grounded state
 	if becomeAirborneArea.get_overlapping_bodies().size() == 0:
 		FrigUpColliders()
+		print("reason for becoming airborne: pill collider no col")
 		BecomeAirborne()
-	elif !playerObj.is_on_floor():
+	elif becomeAirborneArea2.get_overlapping_bodies().size() == 0:
+		print("reason for becoming airborne: not on floor")
 		BecomeAirborne()
 
 func ActivateJump(normalBias): 
@@ -54,17 +57,24 @@ func ActivateJump(normalBias):
 	playerObj.wasGrounded = false
 	playerObj.updateSpeed = false
 	var speed = playerObj.lastRealVelocity.length()
-	playerObj.lastRealVelocity.y = clamp(playerObj.lastRealVelocity.y, 0, INF)
+	playerObj.lastRealVelocity -= min(playerObj.lastRealVelocity.dot(playerObj.up_direction), 0) * playerObj.up_direction
+#	playerObj.lastRealVelocity.y = clamp(playerObj.lastRealVelocity.y, 0, INF)
 #
 #	playerObj.velocity = (1 - 0.8 * normalBias) * playerObj.lastRealVelocity.normalized() * speed + 5 * speed * (0.2 + 0.8 * normalBias) * playerObj.lastFloorNormal
 	playerObj.velocity = (1 - 0.8 * normalBias) * playerObj.lastRealVelocity + playerObj.lastFloorNormal * (5 + 0.8 * normalBias * playerObj.lastRealVelocity.length())
-	print("jumping, new vel: ", playerObj.velocity, " / normalBias: ", normalBias)
+	print("jumping, new vel: ", playerObj.velocity, " / normalBias: ", normalBias, " / dot thing: ", min(playerObj.lastRealVelocity.dot(playerObj.lastFloorNormal), 0))
 	
 	Transitioned.emit(self, "AirState")
 
 func SetJumpLandingVelocity():
-	playerObj.velocity = playerObj.lastVelocity + playerObj.lastVelocity.length() * GetFloorVec()
-	print("floor vec: ", GetFloorVec())
+	pass
+#	var dot = playerObj.lastVelocity.dot(GetFloorVec())
+#	playerObj.velocity = playerObj.lastVelocity + dot * playerObj.lastVelocity
+#	playerObj.velocity = playerObj.lastVelocity + playerObj.lastVelocity.length() * GetFloorVec()
+#	playerObj.velocity -= playerObj.get_real_velocity().dot(playerObj.up_direction) * playerObj.get_real_velocity()
+#	print("pissing: ", playerObj.get_real_velocity().normalized().dot(playerObj.up_direction.normalized()) * playerObj.get_real_velocity())
+#	playerObj.velocity += GetFloorVec()
+#	print("landering, velocitey: ", playerObj.lastVelocity, " / new velocity", playerObj.velocity, " / floor vec: ", GetFloorVec(), " / dot: ", playerObj.lastVelocity.dot(playerObj.get_floor_normal()))
 
 func GetFloorVec():
 	var dot = playerObj.get_floor_normal().dot(upDirController.get_global_transform().basis.y)

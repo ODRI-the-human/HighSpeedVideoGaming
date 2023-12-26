@@ -72,7 +72,7 @@ func _process(delta):
 	if velocity.length() > 0:
 		var dota = get_real_velocity().dot(colliderTop.get_global_transform().basis.y)
 		var poopVec = get_real_velocity() - dota * colliderTop.get_global_transform().basis.y
-		becomeAirborneArea.set_global_position(get_global_position() + clamp(poopVec.length() / 30, 0.4, 1.6) * poopVec.normalized())
+		becomeAirborneArea.set_global_position(get_global_position() + clamp(poopVec.length() / 20 , 0.4, 1.6) * poopVec.normalized())
 	else:
 		becomeAirborneArea.position = Vector3.ZERO
 	

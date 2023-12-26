@@ -10,8 +10,9 @@ func Enter():
 	maxSpeed = clamp(playerObj.lastVelocity.length(), 20, INF)
 
 	#var angle = slopeVec.angle_to(Vector3(playerObj.lastVelocity.x, 0, playerObj.lastVelocity.z))
-#	print("Entered run state, lastvelocity: ", playerObj.lastVelocity.length())
+#	print("Entered run state, lastvelocity: ", playerObj.lastVelocity, " / magnitude: ", playerObj.lastVelocity.length())
 	playerObj.velocity = playerObj.velocity.normalized() * playerObj.lastVelocity.length()
+	print("Entered run state, velocity: ", playerObj.velocity, " / magnitude: ", playerObj.velocity.length())
 	playerObj.wasGrounded = true
 
 func Update(delta):
@@ -52,9 +53,13 @@ func Update(delta):
 		playerObj.velocity = newVel
 	
 	if Input.is_action_pressed("slide"):
-		playerObj.updateSpeed = false
-		playerObj.lastVelocity = playerObj.velocity
-		Transitioned.emit(self, "SlideState")
+		if playerObj.velocity.length() >= 10:
+			playerObj.updateSpeed = false
+			playerObj.lastVelocity = playerObj.velocity
+			Transitioned.emit(self, "SlideState")
+		else:
+			playerObj.updateSpeed = false
+			Transitioned.emit(self, "CrawlState")
 		return
 	
 	if Input.is_action_just_pressed("jump"):

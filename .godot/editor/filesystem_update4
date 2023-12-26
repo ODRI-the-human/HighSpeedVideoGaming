@@ -1,8 +1,11 @@
 res://Player/Player.tscn
 res://LevelBits/ItemGates/ItemGate.gd
-res://Player/States/State.gd
 res://Levels/Advanced Level.tscn
 res://LevelBits/ItemSpecific/Magnet/MagnetPlatform.tscn
-res://Player/PlayerControl.gd
+res://Player/States/CrawlState.gd
+res://Player/States/SlideState.gd
+res://Player/States/RunState.gd
+res://Player/States/GroundSlamState.gd
 res://Player/Weapons/Magnet/Magnet.gd
 res://Player/Weapons/Magnet/MagnetAttractState.gd
+res://Player/States/State.gd

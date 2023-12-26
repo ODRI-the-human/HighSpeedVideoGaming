@@ -21,4 +21,4 @@ func Update(delta):
 		return
 	
 	if playerObj.updateSpeed:
-		playerObj.velocity = -upDirController.get_global_transform().basis.y * clamp(40 * (4.4 * timer), 0, 300)
+		playerObj.velocity = -upDirController.get_global_transform().basis.y * clamp(70 * timer, 0, 150)

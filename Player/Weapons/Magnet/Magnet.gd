@@ -43,13 +43,16 @@ func Alt():
 			MagnetMoment(-1, castObj, rayCaster.get_collision_point())
 
 func MagnetMoment(sign : int, castObj, pos):
-	if isOnMagneticSurface:
-		upDirController.rotate(upDirController.get_global_transform().basis.x, -totalAngleRotated)
+#	if isOnMagneticSurface:
+#		upDirController.rotate(upDirController.get_global_transform().basis.x, -totalAngleRotated)
 	playerObj.SetNewBasisAndShit(Vector3(0, 1, 0))
 	isOnMagneticSurface = false
-	currentUp = playerObj.up_direction
+	currentUp = upDirController.get_global_transform().basis.y
 	attractObjNormal = -castObj.get_global_transform().basis.y
-	angle = currentUp.signed_angle_to(attractObjNormal, upDirController.get_global_transform().basis.x)
+	angle = currentUp.signed_angle_to(attractObjNormal, playerObj.get_global_transform().basis.x)
+#	if angle > 0:
+#		angle = -angle
+#	angle = currentUp.signed_angle_to(attractObjNormal, Vector3.UP) - totalAngleRotated
 	attractObj = castObj
 	attractPosition = pos
 	magnetSign = sign
@@ -61,13 +64,14 @@ func MagnetMoment(sign : int, castObj, pos):
 	totalFrac = 0
 	lastFracEased = 0
 	rotateTimer = 0
-	totalAngleRotated = 0
 
 func AltRelease():
-	AnyStateRelease()
+	pass
+#	AnyStateRelease()
 
 func Release():
-	AnyStateRelease()
+	pass
+#	AnyStateRelease()
 
 func InvertColliders(circle : bool):
 	if circle:
@@ -93,7 +97,6 @@ func AnyStateRelease():
 			totalFrac = 0
 			lastFracEased = 0
 			rotateTimer = 0
-			totalAngleRotated = 0
 			playerObj.doCheckIfNoLongerOnFloor = false
 
 func Deactivate():
@@ -117,7 +120,6 @@ func _process(delta):
 				angle = deg_to_rad(360) - totalAngleRotated
 				totalFrac = 0
 				lastFracEased = 0
-				totalAngleRotated = 0
 				surfaceCheckTimer = 0
 				rotateTimer = 0
 				playerObj.doCheckIfNoLongerOnFloor = false
@@ -137,9 +139,10 @@ func _process(delta):
 	var funney = angle * (amount - lastFracEased)
 	lastFracEased = amount
 	totalAngleRotated += funney
+	print("total angle rotated: ", rad_to_deg(totalAngleRotated))
 #	print("total angle: ", rad_to_deg(totalAngleRotated), " / rotateTimer: ", rotateTimer, " / amount: ", amount, " / funney: ", rad_to_deg(funney))
 #	var amountToRotate = initialRotation * fracMoved
 #	totalRotation += amountToRotate
 #	angleLeft = max(angleLeft - amountToRotate, 0)
 
-	upDirController.rotate(upDirController.get_global_transform().basis.x, funney)
+	upDirController.rotate(playerObj.get_global_transform().basis.x, funney)
