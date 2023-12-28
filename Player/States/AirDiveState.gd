@@ -29,6 +29,10 @@ func Update(delta):
 #		SetJumpLandingVelocity()
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "RunState")
+		playerObj.velocity = playerObj.velocity.normalized() * playerObj.lastVelocity.length()
+#		playerObj.velocity = (playerObj.lastRealVelocity - playerObj.lastRealVelocity.dot(playerObj.get_floor_normal()) * playerObj.get_floor_normal()).normalized() * playerObj.lastRealVelocity.length()
+#		print("dive, velocity: ", playerObj.velocity)
+		playerObj.camera.LandingImpact()
 		return
 	
 	if Input.is_action_just_pressed("slam"):

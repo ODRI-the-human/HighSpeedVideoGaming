@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703568460
+::res://::1703657148
 icon.svg::CompressedTexture2D::8173258389105105737::1694834754::1694834766::1::::<><>::
 README.md::TextFile::-1::1702029155::0::1::::<><>::
 ::res://LevelBits/::1703072638
@@ -15,21 +15,21 @@ MagnetGate.tscn::PackedScene::3837369331807639047::1702288629::0::1::::<><>::res
 MagnetRemoveGate.tscn::PackedScene::4097727649427676763::1702288635::0::1::::<><>::res://LevelBits/ItemGates/ItemGate.gd
 ::res://LevelBits/ItemSpecific/::1703157037
 GrappleBall.tscn::PackedScene::3726943145953114356::1701667299::0::1::::<><>::
-::res://LevelBits/ItemSpecific/Magnet/::1703568476
-MagnetPlatform.tscn::PackedScene::545259271219439055::1703568476::0::1::::<><>::uid://3tsapp0cre1c::::res://LevelBits/ItemSpecific/Magnet/magnetPlatformWrongDirection.png
+::res://LevelBits/ItemSpecific/Magnet/::1703585406
+MagnetPlatform.tscn::PackedScene::545259271219439055::1703585406::0::1::::<><>::uid://3tsapp0cre1c::::res://LevelBits/ItemSpecific/Magnet/magnetPlatformWrongDirection.png
 magnetPlatformWrongDirection.png::CompressedTexture2D::2005604517223389198::1703156930::1703157037::1::::<><>::
-::res://Levels/::1703568476
-Advanced Level.tscn::PackedScene::6237594437737957835::1703568476::0::1::::<><>::uid://imj1fv8uq3o3::::res://Player/Player.tscn<>uid://bpy3tygr4fqui::::res://LevelBits/BasicFloor.tscn<>uid://ckmdgmbjvviax::::res://LevelBits/Ramp8x4.tscn<>uid://b0julw7h77xrj::::res://LevelBits/Ramp4x4.tscn<>uid://bertisb6vtdpb::::res://LevelBits/Platform.tscn<>uid://btdmhdyqyhohw::::res://LevelBits/ItemSpecific/GrappleBall.tscn<>uid://117gv7nba7uy::::res://LevelBits/ItemGates/GrappleGate.tscn<>uid://cirec1oq825d2::::res://LevelBits/ItemGates/GrappleRemoveGate.tscn<>uid://h1eltwlk35lb::::res://LevelBits/ItemSpecific/Magnet/MagnetPlatform.tscn
+::res://Levels/::1703585406
+Advanced Level.tscn::PackedScene::6237594437737957835::1703585406::0::1::::<><>::uid://imj1fv8uq3o3::::res://Player/Player.tscn<>uid://bpy3tygr4fqui::::res://LevelBits/BasicFloor.tscn<>uid://ckmdgmbjvviax::::res://LevelBits/Ramp8x4.tscn<>uid://b0julw7h77xrj::::res://LevelBits/Ramp4x4.tscn<>uid://bertisb6vtdpb::::res://LevelBits/Platform.tscn<>uid://btdmhdyqyhohw::::res://LevelBits/ItemSpecific/GrappleBall.tscn<>uid://117gv7nba7uy::::res://LevelBits/ItemGates/GrappleGate.tscn<>uid://cirec1oq825d2::::res://LevelBits/ItemGates/GrappleRemoveGate.tscn<>uid://h1eltwlk35lb::::res://LevelBits/ItemSpecific/Magnet/MagnetPlatform.tscn
 TestLevel.tscn::PackedScene::2242776876466981907::1703142419::0::1::::<><>::uid://bertisb6vtdpb
 ::res://Other/::1699426119
-::res://Player/::1703568476
+::res://Player/::1703585406
 ConceptSketch1.png::CompressedTexture2D::3369426911212356672::1703339034::1703391863::1::::<><>::
 ConceptSketch2.png::CompressedTexture2D::301885099737591667::1703339034::1703391863::1::::<><>::
 fashionHands.glb::PackedScene::3247134343015533206::1694858359::1694858359::1::::<><>::
 firstPersonHands.glb::PackedScene::3388011355412227972::1701064617::1701064619::1::::<><>::uid://dutsm08ylhf1c
 frickule.png::CompressedTexture2D::550942327536245353::1700468453::1699426866::1::::<><>::
 MidAirPunchState.gd::GDScript::-1::1699423592::0::1::::MidAirPunchState<>State<>::
-Player.tscn::PackedScene::586876462313802760::1703568476::0::1::::<><>::res://Player/PlayerControl.gd<>uid://bmi63foipxt2m::::res://Player/fashionHands.glb<>res://Player/PlayerStateMachine.gd<>uid://h3467hv485yj::::res://Player/frickule.png<>uid://bojgb1e7hatrg::::res://Player/firstPersonHands.glb<>res://Player/States/RunState.gd<>res://Player/MidAirPunchState.gd<>res://Player/States/AirState.gd<>res://Player/States/WallRunState.gd<>res://Player/States/SlideState.gd<>res://Player/States/GroundSlamState.gd<>res://Player/States/AirDiveState.gd<>res://Player/Weapons/WeaponMan.gd<>res://Player/States/WallVertSlideState.gd<>res://Player/Weapons/Grapple/Grap.gd<>res://Player/Weapons/Grapple/GrapRetractState.gd<>res://Player/Weapons/Grapple/GrapYankState.gd<>res://Player/Weapons/Magnet/Magnet.gd<>res://Player/Weapons/Magnet/MagnetAttractState.gd<>res://Player/States/State.gd
+Player.tscn::PackedScene::586876462313802760::1703585406::0::1::::<><>::res://Player/PlayerControl.gd<>uid://bmi63foipxt2m::::res://Player/fashionHands.glb<>res://Player/PlayerStateMachine.gd<>uid://h3467hv485yj::::res://Player/frickule.png<>uid://bojgb1e7hatrg::::res://Player/firstPersonHands.glb<>res://Player/States/RunState.gd<>res://Player/MidAirPunchState.gd<>res://Player/States/AirState.gd<>res://Player/States/WallRunState.gd<>res://Player/States/SlideState.gd<>res://Player/States/GroundSlamState.gd<>res://Player/States/AirDiveState.gd<>res://Player/Weapons/WeaponMan.gd<>res://Player/States/WallVertSlideState.gd<>res://Player/States/CrawlState.gd<>res://Player/Weapons/Grapple/Grap.gd<>res://Player/Weapons/Grapple/GrapRetractState.gd<>res://Player/Weapons/Grapple/GrapYankState.gd<>res://Player/Weapons/Magnet/Magnet.gd<>res://Player/Weapons/Magnet/MagnetAttractState.gd<>res://Player/States/State.gd
 PlayerControl.gd::GDScript::-1::1703336831::0::1::::<>CharacterBody3D<>::
 PlayerStateMachine.gd::GDScript::-1::1703140786::0::1::::<>Node<>::
 PLAYERSTATES.gd::GDScript::-1::1701492067::0::1::::PLAYERSTATES<>Node<>::
@@ -42,13 +42,14 @@ KhopeshParry.res::Animation::6079182849673281786::1700896870::0::1::::<><>::
 KhopeshSwing.res::Animation::3114661116861127794::1700896870::0::1::::<><>::
 ::res://Player/Misc/::1701685783
 firstPersonHands.gd::GDScript::-1::1701685783::0::1::::<>Node3D<>::
-::res://Player/States/::1703411699
+::res://Player/States/::1703571757
 AirDiveState.gd::GDScript::-1::1703411699::0::1::::AirDiveState<>State<>::
 AirState.gd::GDScript::-1::1703149616::0::1::::AirState<>State<>::
-GroundSlamState.gd::GDScript::-1::1703405955::0::1::::GroundSlamState<>State<>::
-RunState.gd::GDScript::-1::1703315051::0::1::::RunState<>State<>::
-SlideState.gd::GDScript::-1::1703230040::0::1::::SlideState<>State<>::
-State.gd::GDScript::-1::1703411371::0::1::::State<>Node<>::
+CrawlState.gd::GDScript::-1::1703570109::0::1::::CrawlState<>State<>::
+GroundSlamState.gd::GDScript::-1::1703569129::0::1::::GroundSlamState<>State<>::
+RunState.gd::GDScript::-1::1703569013::0::1::::RunState<>State<>::
+SlideState.gd::GDScript::-1::1703568997::0::1::::SlideState<>State<>::
+State.gd::GDScript::-1::1703571757::0::1::::State<>Node<>::
 WallRunState.gd::GDScript::-1::1703160366::0::1::::WallRunState<>State<>::
 WallVertSlideState.gd::GDScript::-1::1703160713::0::1::::WallVertSlideState<>State<>::
 ::res://Player/Weapons/::1702697791
@@ -59,9 +60,9 @@ WeaponMan.gd::GDScript::-1::1702697791::0::1::::<>Node<>::
 Grap.gd::GDScript::-1::1702697832::0::1::::Grap<>Weapon<>::
 GrapRetractState.gd::GDScript::-1::1701353480::0::1::::GrapRetractState<>State<>::
 GrapYankState.gd::GDScript::-1::1701159840::0::1::::GrapYankState<>State<>::
-::res://Player/Weapons/Magnet/::1703312858
-Magnet.gd::GDScript::-1::1703239155::0::1::::Magnet<>Weapon<>::
-MagnetAttractState.gd::GDScript::-1::1703312858::0::1::::MagnetAttractState<>State<>::
+::res://Player/Weapons/Magnet/::1703585311
+Magnet.gd::GDScript::-1::1703585311::0::1::::Magnet<>Weapon<>::
+MagnetAttractState.gd::GDScript::-1::1703582134::0::1::::MagnetAttractState<>State<>::
 ::res://SongsToRemakePerhaps/::1695121326
 i_guess_nearly_done.mp3::AudioStreamMP3::3734261743412661011::1695108434::1695121325::1::::<><>::
 rat.wav::AudioStreamWAV::7546990092243104645::1695107829::1695121326::1::::<><>::

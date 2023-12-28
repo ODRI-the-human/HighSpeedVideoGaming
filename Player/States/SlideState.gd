@@ -42,7 +42,7 @@ func Update(delta):
 	
 	CheckIfToBecomeAirborne()
 	
-	slideLength += 0.5 * timer
+	slideLength = 0.5 * timer
 	#print("slideTimer: ", slideLength)
 	var vel = dirMoving
 	var slopeVec = GetFloorVec()
@@ -51,6 +51,9 @@ func Update(delta):
 #	playerObj.velocity.z = vel.z
 	playerObj.velocity += 15 * slopeVec * delta
 	
+	if playerObj.velocity.length() <= 10 && playerObj.get_floor_normal().normalized().dot(playerObj.up_direction.normalized()) == 1 && playerObj.direction != Vector3.ZERO:
+		playerObj.updateSpeed = false
+		Transitioned.emit(self, "CrawlState")
 	
 	if Input.is_action_just_pressed("jump") && !areaTop.has_overlapping_bodies():
 		DoJump()

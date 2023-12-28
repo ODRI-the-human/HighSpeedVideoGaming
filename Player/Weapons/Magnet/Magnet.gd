@@ -139,7 +139,7 @@ func _process(delta):
 	var funney = angle * (amount - lastFracEased)
 	lastFracEased = amount
 	totalAngleRotated += funney
-	print("total angle rotated: ", rad_to_deg(totalAngleRotated))
+#	print("total angle rotated: ", rad_to_deg(totalAngleRotated))
 #	print("total angle: ", rad_to_deg(totalAngleRotated), " / rotateTimer: ", rotateTimer, " / amount: ", amount, " / funney: ", rad_to_deg(funney))
 #	var amountToRotate = initialRotation * fracMoved
 #	totalRotation += amountToRotate

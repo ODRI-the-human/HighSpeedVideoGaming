@@ -33,6 +33,7 @@ func _process(delta):
 				playerObj.lastFloorNormal = playerObj.get_floor_normal()
 		playerObj.currFloorNormal = playerObj.get_floor_normal()
 		current_state.timer += delta
+		current_state.debugTimer += 1
 	
 	
 

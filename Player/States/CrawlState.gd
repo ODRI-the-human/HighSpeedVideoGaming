@@ -23,10 +23,8 @@ func Update(delta):
 	playerObj.updateSpeed = true
 	playerObj.move_and_slide()
 	
-	if playerObj.is_on_wall() && playerObj.get_floor_normal().angle_to(upDirController.get_global_transform().basis.y) > deg_to_rad(45): # The following is all for transitioning to the wall climb state.
-		playerObj.updateSpeed = false
-		Transitioned.emit(self, "WallVertSlideState")
-		return
+	if playerObj.get_floor_normal().normalized().dot(playerObj.up_direction.normalized()) != 1:
+		Transitioned.emit(self, "SlideState")
 	
 	CheckIfToBecomeAirborne()
 	

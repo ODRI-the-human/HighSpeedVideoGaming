@@ -18,6 +18,7 @@ func Update(delta):
 		SetJumpLandingVelocity()
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "RunState")
+		playerObj.camera.LandingImpact()
 		return
 	
 	if playerObj.updateSpeed:

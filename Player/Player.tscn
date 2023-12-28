@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://imj1fv8uq3o3"]
+[gd_scene load_steps=33 format=3 uid="uid://imj1fv8uq3o3"]
 
 [ext_resource type="Script" path="res://Player/PlayerControl.gd" id="1_qq07l"]
 [ext_resource type="PackedScene" uid="uid://bmi63foipxt2m" path="res://Player/fashionHands.glb" id="2_82xoe"]
+[ext_resource type="Script" path="res://Player/CameraController.gd" id="2_g1bqb"]
 [ext_resource type="Script" path="res://Player/PlayerStateMachine.gd" id="3_giv07"]
 [ext_resource type="Texture2D" uid="uid://h3467hv485yj" path="res://Player/frickule.png" id="3_hnebs"]
 [ext_resource type="PackedScene" uid="uid://bojgb1e7hatrg" path="res://Player/firstPersonHands.glb" id="4_ab8dd"]
@@ -45,7 +46,7 @@ radius = 0.04
 height = 8.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ivvka"]
-radius = 0.35
+radius = 0.6
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bp06e"]
 radius = 0.25
@@ -69,8 +70,8 @@ colliderTop = NodePath("ColliderTop")
 colliderBottom = NodePath("ColliderBottom")
 colliderCircle = NodePath("MagnetLandArea/ColliderCircle")
 checkStopSliding = NodePath("CheckIfCanStopSliding")
-becomeAirborneArea = NodePath("MagnetLandArea/ColliderCircle/BecomeAirborneArea")
-becomeAirborneArea2 = NodePath("MagnetLandArea/ColliderCircle/BecomeAirborneArea2")
+becomeAirborneArea = NodePath("MagnetLandArea/ColliderCircle/BecomeAirborneAreaPill")
+becomeAirborneArea2 = NodePath("MagnetLandArea/ColliderCircle/BecomeAirborneAreaUnder")
 
 [node name="CheckIfCanStopSliding" type="Area3D" parent="."]
 collision_mask = 2
@@ -101,17 +102,23 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
 shape = SubResource("CapsuleShape3D_go0ii")
 
-[node name="BecomeAirborneArea" type="Area3D" parent="MagnetLandArea/ColliderCircle"]
+[node name="BecomeAirborneAreaPill" type="Area3D" parent="MagnetLandArea/ColliderCircle"]
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MagnetLandArea/ColliderCircle/BecomeAirborneArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MagnetLandArea/ColliderCircle/BecomeAirborneAreaPill"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 shape = SubResource("CapsuleShape3D_qfaip")
 
-[node name="BecomeAirborneArea2" type="Area3D" parent="MagnetLandArea/ColliderCircle"]
+[node name="BecomeAirborneAreaUnder" type="Area3D" parent="MagnetLandArea/ColliderCircle"]
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MagnetLandArea/ColliderCircle/BecomeAirborneArea2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MagnetLandArea/ColliderCircle/BecomeAirborneAreaUnder"]
+shape = SubResource("SphereShape3D_ivvka")
+
+[node name="WallSlideEndCheckArea" type="Area3D" parent="MagnetLandArea/ColliderCircle"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MagnetLandArea/ColliderCircle/WallSlideEndCheckArea"]
 shape = SubResource("SphereShape3D_ivvka")
 
 [node name="WallSlideDetector" type="Area3D" parent="."]
@@ -125,8 +132,10 @@ shape = SubResource("SphereShape3D_bp06e")
 [node name="Neck" type="Node3D" parent="UpDirController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.758, 0)
 
-[node name="Camera3D" type="Camera3D" parent="UpDirController/Neck"]
+[node name="Camera3D" type="Camera3D" parent="UpDirController/Neck" node_paths=PackedStringArray("playerObj")]
 current = true
+script = ExtResource("2_g1bqb")
+playerObj = NodePath("../../..")
 
 [node name="debuggins cam" type="Camera3D" parent="UpDirController/Neck/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.093689, 2.56646)
@@ -142,6 +151,7 @@ target_position = Vector3(0, 0, -300)
 
 [node name="Sprite3D" type="Sprite3D" parent="UpDirController/Neck/Camera3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, -0.1)
+visible = false
 pixel_size = 0.001
 texture = ExtResource("3_hnebs")
 

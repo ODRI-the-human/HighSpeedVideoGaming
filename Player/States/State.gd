@@ -5,12 +5,14 @@ signal Transitioned
 
 @onready var playerObj = $"../.."
 @onready var upDirController = $"../../UpDirController"
-@onready var becomeAirborneArea = $"../../MagnetLandArea/ColliderCircle/BecomeAirborneArea"
-@onready var becomeAirborneArea2 = $"../../MagnetLandArea/ColliderCircle/BecomeAirborneArea2"
+@onready var becomeAirborneArea = $"../../MagnetLandArea/ColliderCircle/BecomeAirborneAreaPill"
+@onready var becomeAirborneArea2 = $"../../MagnetLandArea/ColliderCircle/BecomeAirborneAreaUnder"
+@onready var wallSlideEndCheckArea = $"../../MagnetLandArea/ColliderCircle/WallSlideEndCheckArea"
 @onready var camera = $"../../UpDirController/Neck/Camera3D"
 @onready var neck = $"../../UpDirController/Neck"
 var timer = 0 # tracks how long the player has been in a state.
 var startingCameraPosition : Vector3
+var debugTimer : int
 
 @export var abilName : String
 @export var description : String
@@ -67,9 +69,12 @@ func ActivateJump(normalBias):
 	Transitioned.emit(self, "AirState")
 
 func SetJumpLandingVelocity():
-	pass
-#	var dot = playerObj.lastVelocity.dot(GetFloorVec())
-#	playerObj.velocity = playerObj.lastVelocity + dot * playerObj.lastVelocity
+	var previousVelocity = playerObj.lastRealVelocity
+	playerObj.velocity = playerObj.lastRealVelocity - playerObj.lastRealVelocity.dot(playerObj.get_floor_normal()) * playerObj.get_floor_normal()
+	playerObj.velocity = (playerObj.velocity - playerObj.velocity.dot(playerObj.up_direction) * playerObj.up_direction).normalized() * playerObj.velocity.length()
+	playerObj.lastVelocity = playerObj.velocity
+	print("did an epic landing, last velocity: ", previousVelocity, " / current velocity: ", playerObj.velocity)
+#	playerObj.velocity = dot * playerObj.lastVelocity
 #	playerObj.velocity = playerObj.lastVelocity + playerObj.lastVelocity.length() * GetFloorVec()
 #	playerObj.velocity -= playerObj.get_real_velocity().dot(playerObj.up_direction) * playerObj.get_real_velocity()
 #	print("pissing: ", playerObj.get_real_velocity().normalized().dot(playerObj.up_direction.normalized()) * playerObj.get_real_velocity())

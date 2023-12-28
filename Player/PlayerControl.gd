@@ -40,7 +40,7 @@ var doCheckIfNoLongerOnFloor = true
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	floor_max_angle = deg_to_rad(89)
+	floor_max_angle = deg_to_rad(80)
 	floor_snap_length = 2
 	currFloorNormal = get_floor_normal()
 	SetNewBasisAndShit(upDirController.get_global_transform().basis.y)
@@ -111,8 +111,6 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
-	
-	camera.fov = clamp(75 + 0.1 * get_real_velocity().length() * (1 - clamp(get_real_velocity().angle_to(-camera.get_global_transform().basis.z) / deg_to_rad(90), 0, 1)), 75, 100)
 
 func _physics_process(delta):
 	# Add the gravity.

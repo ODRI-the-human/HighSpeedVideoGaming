@@ -11,8 +11,9 @@ func Enter():
 
 	#var angle = slopeVec.angle_to(Vector3(playerObj.lastVelocity.x, 0, playerObj.lastVelocity.z))
 #	print("Entered run state, lastvelocity: ", playerObj.lastVelocity, " / magnitude: ", playerObj.lastVelocity.length())
-	playerObj.velocity = playerObj.velocity.normalized() * playerObj.lastVelocity.length()
-	print("Entered run state, velocity: ", playerObj.velocity, " / magnitude: ", playerObj.velocity.length())
+#	playerObj.velocity = playerObj.velocity.normalized() * playerObj.lastRealVelocity.length()
+#	print("Entered run state, velocity: ", playerObj.velocity, " / magnitude: ", playerObj.velocity.length())
+#	print("run state; lastVelocity: ", playerObj.lastVelocity)
 	playerObj.wasGrounded = true
 
 func Update(delta):
@@ -20,7 +21,11 @@ func Update(delta):
 	playerObj.updateSpeed = true
 	playerObj.move_and_slide()
 	
-	if playerObj.is_on_wall() && playerObj.get_floor_normal().angle_to(upDirController.get_global_transform().basis.y) > deg_to_rad(45): # The following is all for transitioning to the wall climb state.
+#	if debugTimer % 5 == 0:
+#		print("buggins ecosystem: ", round(rad_to_deg(playerObj.get_floor_normal().angle_to(upDirController.get_global_transform().basis.y))))
+	
+	if playerObj.is_on_wall() && round(rad_to_deg(playerObj.get_floor_normal().angle_to(upDirController.get_global_transform().basis.y))) >= 45: # The following is all for transitioning to the wall climb state.
+#		print("shitty")
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "WallVertSlideState")
 		return

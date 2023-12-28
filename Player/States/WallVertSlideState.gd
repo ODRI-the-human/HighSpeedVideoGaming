@@ -23,7 +23,7 @@ func Enter():
 #	else:
 #		pass #lol nothing to be done goober
 	
-	print("Entered wall vert slide state, velocity: ", playerObj.velocity, " / normalVec: ", normalVec)
+#	print("Entered wall vert slide state, velocity: ", playerObj.velocity, " / normalVec: ", normalVec)
 	
 	#var dotProd = rotAxisVec.normalized().dot(playerObj.lastVelocity.normalized())
 	#playerObj.velocity = Vector3.UP.rotated(normalVec, deg_to_rad(90 * dotProd)) * playerObj.lastVelocity.length()
@@ -40,7 +40,7 @@ func Update(delta):
 		Transitioned.emit(self, "AirState")
 		return
 	
-	if playerObj.is_on_floor():
+	if wallSlideEndCheckArea.get_overlapping_bodies().size() > 0:
 		playerObj.updateSpeed = false
 		Transitioned.emit(self, "RunState")
 		return
@@ -50,15 +50,17 @@ func Update(delta):
 		normalVec = currentNormal
 		var collisionLocation = playerObj.get_last_slide_collision().get_position()
 		wallCheckAreaGuy.set_global_position(collisionLocation)
-		print("wallCheckAreaGuy position: ", wallCheckAreaGuy.get_global_position())
+#		print("wallCheckAreaGuy position: ", wallCheckAreaGuy.get_global_position())
 	
 	if playerObj.direction != Vector3.ZERO:
 		var dirToMove = playerObj.direction
 		var rotAxisVec = Vector3(-normalVec.z, 0, normalVec.x)
 		var inputDot = dirToMove.normalized().dot(rotAxisVec.normalized())
 		var glumble = 0.2 * inputDot * rotAxisVec
-		print("MMMMMM YUMMY inputDot: ", inputDot)
+#		print("MMMMMM YUMMY inputDot: ", inputDot)
 		playerObj.velocity += glumble
+	
+	playerObj.velocity -= playerObj.velocity.dot(currentNormal) * currentNormal
 	
 	playerObj.move_and_slide()
 	
@@ -75,8 +77,8 @@ func Update(delta):
 func DoJump():
 	playerObj.wasGrounded = false
 	playerObj.updateSpeed = false
-	var vecto = Vector3(playerObj.lastRealVelocity.x, 0, playerObj.lastRealVelocity.z)
-	var boostVec = (normalVec.normalized() + Vector3(0, 1, 0)).normalized() * max(playerObj.lastRealVelocity.length(), 20)
+	var vecto = playerObj.lastRealVelocity - playerObj.lastRealVelocity.dot(playerObj.up_direction) * playerObj.up_direction#Vector3(playerObj.lastRealVelocity.x, 0, playerObj.lastRealVelocity.z)
+	var boostVec = (normalVec.normalized() + playerObj.up_direction).normalized() * max(playerObj.lastRealVelocity.length(), 20)
 	playerObj.velocity = boostVec + vecto
 	#playerObj.velocity += 1.5 * normalVec * playerObj.lastVelocity.length()
 	#playerObj.velocity.y += playerObj.jumpVel * playerObj.lastVelocity.length()
